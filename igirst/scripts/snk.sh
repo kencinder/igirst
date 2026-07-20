@@ -2,9 +2,6 @@
 
 clear
 
-FILE="igir"
-
-if [ -f "$FILE" ]; then
 echo "****************************************************"
 echo "*                                                  *"
 echo "*                IGIR SHELL TOOLS                  *"
@@ -13,15 +10,6 @@ echo "*                      SNK                         *"
 echo "*                                                  *"
 echo "****************************************************"
 echo
-else
-    echo "***IGIR not found!***"
-    echo
-    echo "This script MUST be run in the same directory as the IGIR Binary."
-    echo
-    read -n 1 -s -r -p "Press any key to exit..."
-    echo
-    exit
-fi
 
 # Commands Menu
 PS3="Choose a Platform(1-3): "
