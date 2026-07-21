@@ -11,30 +11,37 @@ do
     case $cmd in
         "Generate Report Only")
             command="report"
+            source "./scripts/commands.sh"
             break
             ;;
         "Scan and Copy Roms")
             command="copy report"
+            source "./scripts/command.sh"
             break
             ;;
         "Scan and Move Roms")
             command="move report"
+            source "./scripts/command.sh"
             break
             ;;
         "Scan and Copy Roms(Backup Unused)")
-            command="copy clean report --clean-backup $backup"
+            command="copy clean report --clean-backup"
+            source "./scripts/command-backup.sh"
             break
             ;;
         "Scan and Move Roms(Backup Unused)")
-            command="move clean report --clean-backup $backup"
+            command="move clean report --clean-backup"
+            source "./scripts/command-backup.sh"
             break
             ;;
         "Scan and Copy Roms(Recycle Unused)")
             command="copy clean report"
+            source "./scripts/commands.sh"
             break
             ;;
         "Scan and Move Roms(Recycle Unused)")
             command="move clean report"
+            source "./scripts/commands.sh"
             break
             ;;
         "Main Menu")
@@ -52,11 +59,3 @@ do
             ;;
         esac
     done
-
-clear
-
-./igir $command --dat "$dat" --input "$input" --output "$output" -R $regions -L $lang -X "$exclude" $options --report-output "$report"
-
-echo
-read -n 1 -s -r -p "Press any key to continue..."
-echo
