@@ -1,5 +1,9 @@
 # IGIR Shell Tools
 
+
+### Very much `WIP` Issues and PRs are not accepted at this time as I am still working on finishing up initial systems and fine tuning for public use. Use what is here at your own risk!
+\
+\
 A collection of Linux shell scripts I have put together to make using [IGIR](https://github.com/emmercm/igir) easier.
 
 Currently only does scanning, with copy/move with/without backup/recycling and report generation of cart based systems.
@@ -13,5 +17,3 @@ You will need IGIR at the root of the files you find here, every script is writt
 `DAT` files go in `dats/<platform>` by system and can be zipped or unzipped, env files default to using a systems Parent-Clone XML DAT but can be changed.
 
 `.env` files for each system are in `variables/<platform>` and will need modified to suit your setup, but have defaults present for everything but your ROMs that work out of the box.
-
-Very much `WIP` with platforms added as I have time, as of this writing.
