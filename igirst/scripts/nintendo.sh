@@ -2,80 +2,65 @@
 
 clear
 
-echo "****************************************************"
-echo "*                                                  *"
-echo "*                IGIR SHELL TOOLS                  *"
-echo "*                                                  *"
-echo "*                    Nintendo                      *"
-echo "*                                                  *"
-echo "****************************************************"
-echo
+source "./variables/messages.env"
+source "./variables/menus.env"
+
+    printf "$nintendo_menu_header"
 
 # Commands Menu
-PS3="Choose a Platform(1-12): "
+    printf "$nintendo_menu_list"
 
-# Define the commands
-commands=("3DS" "DS" "Game Boy" "Game Boy Advance" "Game Boy Color" "GameCube" "64" "Nintendo Entertainment System" "Super Nintendo Entertainment System" "Virtual Boy" "Main Menu" "Quit")
+while true; do
+    read -p "Select an option: " choice
 
-# Run the select loop
-COLUMNS=1
-select cmd in "${commands[@]}"
-do
-    case $cmd in
-        "3DS")
-            ./scripts/nintendo/3ds.sh
-            break
+    if [ -z "$choice" ]; then
+        choice=""
+    fi
+
+    case $choice in
+        1)
+            exec ./scripts/nintendo/3ds.sh
             ;;
-        "DS")
-            ./scripts/nintendo/ds.sh
-            break
+        2)
+            exec ./scripts/nintendo/64.sh
             ;;
-        "Game Boy")
-            source ./scripts/nintendo/gb.sh
-            break
+        3)
+            exec ./scripts/nintendo/ds.sh
             ;;
-        "Game Boy Advance")
-            ./scripts/nintendo/gba.sh
-            break
+        4)
+            exec ./scripts/nintendo/gb.sh
             ;;
-        "Game Boy Color")
-            ./scripts/nintendo/gbc.sh
-            break
+        5)
+            exec ./scripts/nintendo/gba.sh
             ;;
-        "GameCube")
-            ./scripts/nintendo/gc.sh
-            break
+        6)
+            exec ./scripts/nintendo/gbc.sh
             ;;
-        "64")
-            ./scripts/nintendo/64.sh
-            break
+        7)
+            exec ./scripts/nintendo/nes.sh
             ;;
-        "Nintendo Entertainment System")
+        8)
+            exec ./scripts/nintendo/snes.sh
+            ;;
+        9)
+            exec ./scripts/nintendo/vb.sh
+            ;;
+        10)
+            exec ./igirst.sh
+            ;;
+        0)
             clear
-            source ./scripts/nintendo/nes.sh
-            break
+            printf "$quit"
+            sleep 1
+            clear && exit
             ;;
-        "Super Nintendo Entertainment System")
-            ./scripts/nintendo/snes.sh
-            break
-            ;;
-        "Virtual Boy")
-            ./scripts/nintendo/vb.sh
-            break
-            ;;
-        "Main Menu")
-            ./igirst.sh
-            break
-            ;;
-        "Quit")
-            clear
-            echo "Exiting IGIR Shell Tools..."
-            sleep 2
-            clear
-            exit
+        "")
+            printf "$empty_choice"
+            sleep 1 && exec "$0" "$@"
             ;;
         *)
-            echo "Invalid option $REPLY"
+            printf "$invalid_choice $choice"
+            sleep 1 && exec "$0" "$@"
             ;;
-    esac
-done
+        esac
+    done

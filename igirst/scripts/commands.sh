@@ -1,61 +1,73 @@
+#!/bin/bash
+
+source "./variables/messages.env"
+source "./variables/menus.env"
+
 # Commands Menu
-PS3="Choose a command (1-9): "
+    printf "$command_menu_list"
 
-# Define the commands
-commands=("Generate Report Only" "Scan and Copy Roms" "Scan and Move Roms" "Scan and Copy Roms(Backup Unused)" "Scan and Move Roms(Backup Unused)" "Scan and Copy Roms(Recycle Unused)" "Scan and Move Roms(Recycle Unused)" "Main Menu" "Quit")
+while true; do
+    read -p "Select an option: " choice
 
-# Run the select loop
-COLUMNS=1
-select cmd in "${commands[@]}"
-do
-    case $cmd in
-        "Generate Report Only")
+    if [ -z "$choice" ]; then
+        choice=""
+    fi
+
+    case $choice in
+        1)
             command="report"
-            source "./scripts/commands.sh"
+            source "./scripts/command.sh"
             break
             ;;
-        "Scan and Copy Roms")
+        2)
             command="copy report"
             source "./scripts/command.sh"
             break
             ;;
-        "Scan and Move Roms")
+        3)
             command="move report"
             source "./scripts/command.sh"
             break
             ;;
-        "Scan and Copy Roms(Backup Unused)")
+        4)
             command="copy clean report --clean-backup"
             source "./scripts/command-backup.sh"
             break
             ;;
-        "Scan and Move Roms(Backup Unused)")
+        5)
             command="move clean report --clean-backup"
             source "./scripts/command-backup.sh"
             break
             ;;
-        "Scan and Copy Roms(Recycle Unused)")
+        6)
             command="copy clean report"
-            source "./scripts/commands.sh"
+            source "./scripts/command.sh"
             break
             ;;
-        "Scan and Move Roms(Recycle Unused)")
+        7)
             command="move clean report"
-            source "./scripts/commands.sh"
+            source "./scripts/command.sh"
             break
             ;;
-        "Main Menu")
-            ./igirst.sh && exit
+        8)
+            exec $previous_menu
             ;;
-        "Quit")
+        9)
+            exec ./igirst.sh
+            ;;
+        0)
             clear
-            echo "Exiting IGIR Shell Tools..."
-            sleep 2
-            clear
-            exit
+            printf "$quit"
+            sleep 1
+            clear && exit
+            ;;
+        "")
+            printf "$empty_choice"
+            sleep 1 && exec "$0" "$@"
             ;;
         *)
-            echo "Invalid option $REPLY"
+            printf "$invalid_choice $choice"
+            sleep 1 && exec "$0" "$@"
             ;;
         esac
     done

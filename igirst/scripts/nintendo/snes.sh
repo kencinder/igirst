@@ -13,6 +13,7 @@ echo
 
 #Load variables
 source "./variables/nintendo/snes.env"
+previous_menu="./scripts/nintendo.sh"
 
 #Check required variables are set
 if [ -z "$dat" ]; then

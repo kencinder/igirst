@@ -1,68 +1,60 @@
 #!/bin/bash
 
+source "./variables/messages.env"
+source "./variables/menus.env"
+
 clear
 
+# Check for IGIR Binary
 FILE="igir"
 
 if [ -f "$FILE" ]; then
-echo "****************************************************"
-echo "*                                                  *"
-echo "*                IGIR SHELL TOOLS                  *"
-echo "*                                                  *"
-echo "*                    Main Menu                     *"
-echo "*                                                  *"
-echo "****************************************************"
-echo
+    printf "$main_menu_header"
 else
-    echo "***IGIR not found!***"
-    echo
-    echo "This script MUST be run in the same directory as the IGIR Binary."
-    echo
-    read -n 1 -s -r -p "Press any key to exit..."
-    echo
+    printf "$no_igir"
+    read -n 1 -s -r -p "Press any key to exit..." && clear
     exit
 fi
 
-# Commands Menu
-PS3="Choose a Platform or Manufacturer(1-6): "
+# Main Menu
+    printf "$main_menu_list"
 
-# Define the commands
-commands=("Atari" "NEC" "Nintendo" "Sega" "SNK" "Quit")
+while true; do
+    read -p "Select an option: " choice
 
-# Run the select loop
-COLUMNS=1
-select cmd in "${commands[@]}"
-do
-    case $cmd in
-        "Atari")
-            ./scripts/atari.sh
-            break
+    if [ -z "$choice" ]; then
+        choice=""
+    fi
+
+    case $choice in
+        1)
+            exec ./scripts/atari.sh
             ;;
-        "NEC")
-            ./scripts/nec.sh
-            break
+        2)
+            exec ./scripts/nec.sh
             ;;
-        "Nintendo")
-            ./scripts/nintendo.sh
-            break
+        3)
+            exec ./scripts/nintendo.sh
             ;;
-        "Sega")
-            ./scripts/sega.sh
-            break
+        4)
+            exec ./scripts/sega.sh
             ;;
-        "SNK")
-            ./scripts/snk.sh
-            break
+        5)
+            exec ./scripts/snk.sh
             ;;
-        "Quit")
+        0)
             clear
-            echo "Exiting IGIR Shell Tools..."
-            sleep 2
-            clear
-            exit
+            printf "$quit"
+            sleep 1
+            clear && exit
+            ;;
+        "")
+            printf "$empty_choice"
+            sleep 1 && exec "$0" "$@"
             ;;
         *)
-            echo "Invalid option $REPLY"
+            printf "$invalid_choice $choice"
+            sleep 1 && exec "$0" "$@"
             ;;
     esac
 done

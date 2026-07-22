@@ -6,18 +6,18 @@ echo "****************************************************"
 echo "*                                                  *"
 echo "*                IGIR SHELL TOOLS                  *"
 echo "*                                                  *"
-echo "*     Nintendo - Nintendo Entertainment System     *"
+echo "*           Nintendo - Game Boy Advance            *"
 echo "*                                                  *"
 echo "****************************************************"
 echo
 
 #Load variables
-source "./variables/nintendo/nes.env"
+source "./variables/nintendo/gba.env"
 previous_menu="./scripts/nintendo.sh"
 
 #Check required variables are set
 if [ -z "$dat" ]; then
-   echo "DAT variable is empty in /variables/nintendo/nes.env, please set and run IGIR Shell Tools again"
+   echo "DAT variable is empty in /variables/nintendo/gba.env, please set and run IGIR Shell Tools again"
    echo
    read -n 1 -s -r -p "Press any key to continue..."
    clear
@@ -27,7 +27,7 @@ if [ -z "$dat" ]; then
    exit
 fi
 if [ -z "$input" ]; then
-   echo "INPUT variable is empty in /variables/nintendo/nes.env, please set and run IGIR Shell Tools again"
+   echo "INPUT variable is empty in /variables/nintendo/gba.env, please set and run IGIR Shell Tools again"
    echo
    read -n 1 -s -r -p "Press any key to continue..."
    clear
@@ -37,7 +37,7 @@ if [ -z "$input" ]; then
    exit
 fi
 if [ -z "$output" ]; then
-   echo "OUPUT variable is empty in /variables/nintendo/nes.env, please set and run IGIR Shell Tools again"
+   echo "OUPUT variable is empty in /variables/nintendo/gba.env, please set and run IGIR Shell Tools again"
    echo
    read -n 1 -s -r -p "Press any key to continue..."
    clear
@@ -47,7 +47,7 @@ if [ -z "$output" ]; then
    exit
 fi
 if [ -z "$backup" ]; then
-   echo "BACKUP variable is empty in /variables/nintendo/nes.env, please set and run IGIR Shell Tools again"
+   echo "BACKUP variable is empty in /variables/nintendo/gba.env, please set and run IGIR Shell Tools again"
    echo
    read -n 1 -s -r -p "Press any key to continue..."
    clear
@@ -57,7 +57,7 @@ if [ -z "$backup" ]; then
    exit
 fi
 if [ -z "$report" ]; then
-   echo "REPORT variable is empty in /variables/nintendo/nes.env, please set and run IGIR Shell Tools again"
+   echo "REPORT variable is empty in /variables/nintendo/gba.env, please set and run IGIR Shell Tools again"
    echo
    read -n 1 -s -r -p "Press any key to continue..."
    clear
