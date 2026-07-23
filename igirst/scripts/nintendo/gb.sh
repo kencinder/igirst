@@ -2,8 +2,8 @@
 
 clear
 
-source "./variables/messages.env"
-source "./variables/menus.env"
+source "./variables/includes/messages.inc"
+source "./variables/includes/menus.inc"
 source "./variables/nintendo/gb.env"
 
 var="./variables/nintendo/gb.env"

@@ -1,7 +1,10 @@
 #!/bin/bash
 
-source "./variables/messages.env"
-source "./variables/menus.env"
+set -e
+
+source "./scripts/includes/menus.inc"
+source "./variables/includes/messages.inc"
+source "./variables/includes/menus.inc"
 
 clear
 
@@ -18,43 +21,5 @@ fi
 
 # Main Menu
     printf "$main_menu_list"
-
-while true; do
-    read -p "Select an option: " choice
-
-    if [ -z "$choice" ]; then
-        choice=""
-    fi
-
-    case $choice in
-        1)
-            exec ./scripts/atari.sh
-            ;;
-        2)
-            exec ./scripts/nec.sh
-            ;;
-        3)
-            exec ./scripts/nintendo.sh
-            ;;
-        4)
-            exec ./scripts/sega.sh
-            ;;
-        5)
-            exec ./scripts/snk.sh
-            ;;
-        0)
-            clear
-            printf "$quit"
-            sleep 1
-            clear && exit
-            ;;
-        "")
-            printf "$empty_choice"
-            sleep 1 && exec "$0" "$@"
-            ;;
-        *)
-            printf "$invalid_choice $choice"
-            sleep 1 && exec "$0" "$@"
-            ;;
-    esac
-done
+    
+main_menu
