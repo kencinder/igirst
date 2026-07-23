@@ -247,7 +247,7 @@ $menu_row_7
 
 snk_menu_list="$choose(0-2):
 
-1: TurboGrafx 16\PC Engine
+1: Neo Geo Pocket Color
 2: Main Menu
 0: Quit
 
