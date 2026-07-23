@@ -1,2 +1,6 @@
 # Force all files with this extension to count as a specific language
 *.inc linguist-language=Shell
+
+# Keep these files out of the final ZIP
+README.md export-ignore
+.gitattributes export-ignore
