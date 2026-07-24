@@ -19,7 +19,7 @@ Currently only does scanning, with copy/move with/without backup/recycling and r
 
 My collection is entirely in 7zip form and IGIR does not support creating archives in 7z format at the time of this writing.
 
-I may add support for extracting/adding zip archives when time permits and/or a way to unpack and repack to 7z from files move to backup.
+I plan to add support for extracting/adding zip archives when time permits, and a poissibly a way to unpack and scan/repack to 7z.
 
 The `IGIR` binary location can be set in `variables/includes/files.env` and defaults to `./igir` but should work from anywhere.
 
