@@ -1,8 +1,9 @@
 #!/bin/bash
 #This file is for IGIR Commands and must be sourced
 
-source "./variables/messages.env"
-source "./variables/menus.env"
+source "./variables/includes/files.inc"
+source "./variables/includes/messages.inc"
+source "./variables/includes/menus.inc"
 
 # Commands Menu
     printf "$command_menu_list"

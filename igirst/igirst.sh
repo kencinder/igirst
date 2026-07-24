@@ -1,15 +1,14 @@
 #!/bin/bash
 
-set -e
-
 source "./scripts/includes/menus.inc"
+source "./variables/includes/files.inc"
 source "./variables/includes/messages.inc"
 source "./variables/includes/menus.inc"
 
 clear
 
 # Check for IGIR Binary
-FILE="igir"
+FILE="$igir_binary"
 
 if [ -f "$FILE" ]; then
     printf "$main_menu_header"

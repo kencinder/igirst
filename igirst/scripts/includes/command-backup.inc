@@ -3,7 +3,7 @@
 
 clear
 
-./igir $command "$backup" --dat "$dat" --input "$input" --output "$output" -R $regions -X "$exclude" $options --report-output "$report"
+"$igir_binary" $command "$backup" --dat "$dat" --input "$input" --output "$output" -R $regions -X "$exclude" $options --report-output "$report"
 
 printf "\n"
 read -n 1 -s -r -p "$continue"
