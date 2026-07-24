@@ -8,6 +8,11 @@ Everything is currently in a functioning state, except for systems under a manuf
 I recommend running a report only first, and using the options with backup or having your own backups beforehand. Use what is here at your own risk!**
 \
 \
+\
+Clone this repository or download the latest files [here](https://github.com/kencinder/igirst/archive/refs/heads/master.zip)
+\
+\
+\
 A collection of Linux shell scripts I have put together to make using [IGIR](https://github.com/emmercm/igir) easier.
 
 Currently only does scanning, with copy/move with/without backup/recycling and report generation of cart based systems.
