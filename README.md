@@ -20,7 +20,7 @@ Currently only does scanning, with copy/move, selectable backup and report gener
 
 The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from anywhere
 
-`DAT` files go in the `dats` directory, under the platform/manufacturer name, or the location of your choice\
+`DAT` files go in the `dats` directory, under the platform/manufacturer, or the location of your choice in `igirst.cfg`\
 They can be zipped or unzipped, the config defaults to using a systems No-Intro Parent-Clone XML DAT
 
 Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
