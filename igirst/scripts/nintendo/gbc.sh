@@ -2,16 +2,24 @@
 
 clear
 
-source "./variables/includes/messages.inc"
-source "./variables/includes/menus.inc"
-source "./variables/nintendo/gbc.env"
+source "./igirst.cfg"
+source "./scripts/includes/messages.inc"
+source "./scripts/includes/menu_vars.inc"
 
-var="./variables/nintendo/gbc.env"
-menu_header="$nintendo_gbc_menu_header"
+dat="$gbc_dat"
+input="$gbc_input"
+output="$gbc_output"
+backup="$gbc_backup"
+report="$gbc_report"
+regions="$gbc_regions"
+options="$gbc_options"
+exclude="$gbc_exclude"
+
 current_menu="./scripts/nintendo/gbc.sh"
+current_menu_header="$nintendo_gbc_menu_header"
 previous_menu="./scripts/nintendo.sh"
 
-    printf "$menu_header"
+    printf "$current_menu_header"
 
 #Check required variables are set
 env_check=$(<./scripts/includes/env_check.inc)

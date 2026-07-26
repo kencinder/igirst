@@ -1,9 +1,9 @@
 #!/bin/bash
 
+source "./igirst.cfg"
 source "./scripts/includes/menus.inc"
-source "./variables/includes/files.inc"
-source "./variables/includes/messages.inc"
-source "./variables/includes/menus.inc"
+source "./scripts/includes/messages.inc"
+source "./scripts/includes/menu_vars.inc"
 
 clear
 

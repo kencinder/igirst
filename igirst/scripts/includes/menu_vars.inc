@@ -7,17 +7,22 @@ menu_row_4="            *                                                  *"
 menu_row_6="            *                                                  *"
 menu_row_7="            ****************************************************"
 
-command_menu_list="Choose a command (0-8):
+command_menu_list="Choose a command (0-5):
 
 1: Generate Report Only
-2: Scan and Copy Roms
-3: Scan and Move Roms
-4: Scan and Copy Roms(Backup Unused)
-5: Scan and Move Roms(Backup Unused)
-6: Scan and Copy Roms(Recycle Unused)
-7: Scan and Move Roms(Recycle Unused)
-8: Previous Menu
-9: Main Menu
+2: Scan and Copy Roms + Generate Report
+3: Scan and Move Roms + Generate Report
+4: Previous Menu
+5: Main Menu
+0: Quit
+
+"
+command_yes_no_list="(0-4):
+
+1: Yes
+2: No
+3: Previous Menu
+4: Main Menu
 0: Quit
 
 "

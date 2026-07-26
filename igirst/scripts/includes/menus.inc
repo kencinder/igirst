@@ -45,7 +45,7 @@ while true; do
 command_menu() {
 while true; do
     clear
-    printf "$menu_header"
+    printf "$current_menu_header"
     printf "$command_menu_list"
     read -p "Select an option: " choice
 
@@ -55,6 +55,7 @@ while true; do
 
     case $choice in
         1)
+            backup=""
             command="report"
             break
             ;;
@@ -64,9 +65,9 @@ while true; do
             clear
             command_yes_no
             if [[ "$yes_no" == "yes" ]]; then
-                command+=" clean --clean-backup $backup"
+                command+=" clean --clean-backup "
                 clear
-                printf "$menu_header"
+                printf "$current_menu_header"
                 printf "$backups_on"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
@@ -77,9 +78,9 @@ while true; do
                             fi
                     done
             elif [[ "$yes_no" == "no" ]]; then
-                command+=""
+                backup=""
                 clear
-                printf "$menu_header"
+                printf "$current_menu_header"
                 printf "$backups_off"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
@@ -100,9 +101,9 @@ while true; do
             clear
             command_yes_no
             if [[ "$yes_no" == "yes" ]]; then
-                command+=" clean --clean-backup $backup"
+                command+=" clean --clean-backup "
                 clear
-                printf "$menu_header"
+                printf "$current_menu_header"
                 printf "$backups_on"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
@@ -113,9 +114,9 @@ while true; do
                             fi
                     done
             elif [[ "$yes_no" == "no" ]]; then
-                command+=""
+                backup=""
                 clear
-                printf "$menu_header"
+                printf "$current_menu_header"
                 printf "$backups_off"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
@@ -156,7 +157,7 @@ while true; do
 command_yes_no() {
 while true; do
     clear
-    printf "$menu_header"
+    printf "$current_menu_header"
     printf "$yes_no_prompt $command_yes_no_list"
     read -p "Select an option: " choice
 

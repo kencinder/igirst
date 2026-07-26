@@ -3,8 +3,8 @@
 clear
 
 source "./scripts/includes/menus.inc"
-source "./variables/includes/messages.inc"
-source "./variables/includes/menus.inc"
+source "./scripts/includes/messages.inc"
+source "./scripts/includes/menu_vars.inc"
 
     printf "$snk_menu_header"
 
