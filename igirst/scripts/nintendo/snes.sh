@@ -7,9 +7,11 @@ source "./variables/includes/menus.inc"
 source "./variables/nintendo/snes.env"
 
 var="./variables/nintendo/snes.env"
+menu_header="$nintendo_snes_menu_header"
+current_menu="./scripts/nintendo/snes.sh"
 previous_menu="./scripts/nintendo.sh"
 
-    printf "$nintendo_snes_menu_header"
+    printf "$menu_header"
 
 #Check required variables are set
 env_check=$(<./scripts/includes/env_check.inc)

@@ -7,9 +7,11 @@ source "./variables/includes/menus.inc"
 source "./variables/nintendo/gbc.env"
 
 var="./variables/nintendo/gbc.env"
+menu_header="$nintendo_gbc_menu_header"
+current_menu="./scripts/nintendo/gbc.sh"
 previous_menu="./scripts/nintendo.sh"
 
-    printf "$nintendo_gbc_menu_header"
+    printf "$menu_header"
 
 #Check required variables are set
 env_check=$(<./scripts/includes/env_check.inc)
