@@ -1,9 +1,12 @@
 #!/bin/bash
 
-source "./igirst.cfg"
-source "./scripts/includes/menus.inc"
-source "./scripts/includes/messages.inc"
-source "./scripts/includes/menu_vars.inc"
+set -a
+source "igirst.cfg"
+source "includes/menus.inc"
+source "includes/messages.inc"
+source "includes/menu_functions.inc"
+source "includes/menu_vars.inc"
+set +a
 
 clear
 
@@ -11,14 +14,9 @@ clear
 FILE="$igir_binary"
 
 if [ -f "$FILE" ]; then
-    printf "$main_menu_header"
+	main_menu
 else
-    printf "$no_igir"
+    printf '%s' "$no_igir"
     read -n 1 -s -r -p "Press any key to exit..." && clear
     exit
 fi
-
-# Main Menu
-    printf "$main_menu_list"
-    
-main_menu

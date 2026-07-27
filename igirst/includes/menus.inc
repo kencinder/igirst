@@ -1,8 +1,10 @@
+#!/bin/bash
+
 main_menu() {
 while true; do
     clear
-    printf "$main_menu_header"
-    printf "$main_menu_list"
+    printf '%s' "$main_menu_header"
+    printf '%s' "$main_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -11,31 +13,31 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/atari.sh
+            atari_menu
             ;;
         2)
-            exec ./scripts/nec.sh
+            nec_menu
             ;;
         3)
-            exec ./scripts/nintendo.sh
+            nintendo_menu
             ;;
         4)
-            exec ./scripts/sega.sh
+            sega_menu
             ;;
         5)
-            exec ./scripts/snk.sh
+            snk_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -45,8 +47,8 @@ while true; do
 command_menu() {
 while true; do
     clear
-    printf "$current_menu_header"
-    printf "$command_menu_list"
+    printf '%s' "$current_menu_header"
+    printf '%s' "$command_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -67,31 +69,31 @@ while true; do
             if [[ "$yes_no" == "yes" ]]; then
                 command+=" clean --clean-backup "
                 clear
-                printf "$current_menu_header"
-                printf "$backups_on"
+                printf '%s' "$current_menu_header"
+                printf '%s' "$backups_on"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
                             if [[ $key == "y" || $key == "Y" ]]; then
                                 break
                             else
-                                exec "$current_menu"
+                                eval "$current_menu"
                             fi
                     done
             elif [[ "$yes_no" == "no" ]]; then
                 backup=""
                 clear
-                printf "$current_menu_header"
-                printf "$backups_off"
+                printf '%s' "$current_menu_header"
+                printf '%s' "$backups_off"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
                             if [[ $key == "y" || $key == "Y" ]]; then
                                 break
                             else
-                                exec "$current_menu"
+                                eval "$current_menu"
                             fi
                     done
             else
-                exec "$current_menu"
+                eval "$current_menu"
             fi
             break
             ;;
@@ -103,51 +105,51 @@ while true; do
             if [[ "$yes_no" == "yes" ]]; then
                 command+=" clean --clean-backup "
                 clear
-                printf "$current_menu_header"
-                printf "$backups_on"
+                printf '%s' "$current_menu_header"
+                printf '%s' "$backups_on"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
                             if [[ $key == "y" || $key == "Y" ]]; then
                                 break
                             else
-                                exec "$current_menu"
+                                eval "$current_menu"
                             fi
                     done
             elif [[ "$yes_no" == "no" ]]; then
                 backup=""
-                clear
-                printf "$current_menu_header"
-                printf "$backups_off"
+				clear
+                printf '%s' "$current_menu_header"
+                printf '%s' "$backups_off"
                     while true; do
                         read -n 1 -s -r -p "$backup_continue" key
                             if [[ $key == "y" || $key == "Y" ]]; then
                                 break
                             else
-                                exec "$current_menu"
+                                eval "$current_menu"
                             fi
                     done
             else
-                exec "$current_menu"
+                eval "$current_menu"
             fi
             break
             ;;
         4)
-            exec $previous_menu
+            eval $previous_menu
             ;;
         5)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -157,8 +159,8 @@ while true; do
 command_yes_no() {
 while true; do
     clear
-    printf "$current_menu_header"
-    printf "$yes_no_prompt $command_yes_no_list"
+    printf '%s' "$current_menu_header"
+    printf '%s' "$yes_no_prompt $command_yes_no_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -179,19 +181,19 @@ while true; do
             break
             ;;
         4)
-            exec ./igirst.sh
+            exec igirst.sh
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -201,8 +203,8 @@ while true; do
 atari_menu() {
 while true; do
     clear
-    printf "$atari_menu_header"
-    printf "$atari_menu_list"
+    printf '%s' "$atari_menu_header"
+    printf '%s' "$atari_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -211,34 +213,34 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/atari/2600.sh
+            atari_2600_menu
             ;;
         2)
-            exec ./scripts/atari/5200.sh
+            atari_5200_menu
             ;;
         3)
-            exec ./scripts/atari/7800.sh
+            atari_7800_menu
             ;;
         4)
-            exec ./scripts/atari/Jaguar.sh
+            atari_jaguar_menu
             ;;
         5)
-            exec ./scripts/atari/Lynx.sh
+            atari_lynx_menu
             ;;
         6)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -248,8 +250,8 @@ while true; do
 nec_menu() {
 while true; do
     clear
-    printf "$nec_menu_header"
-    printf "$nec_menu_list"
+    printf '%s' "$nec_menu_header"
+    printf '%s' "$nec_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -258,22 +260,22 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/nec/tg16.sh
+            nec_tg16_menu
             ;;
         2)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -283,8 +285,8 @@ while true; do
 nintendo_menu() {
 while true; do
     clear
-    printf "$nintendo_menu_header"
-    printf "$nintendo_menu_list"
+    printf '%s' "$nintendo_menu_header"
+    printf '%s' "$nintendo_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -293,46 +295,46 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/nintendo/3ds.sh
+            nintendo_3ds_menu
             ;;
         2)
-            exec ./scripts/nintendo/64.sh
+            nintendo_64_menu
             ;;
         3)
-            exec ./scripts/nintendo/ds.sh
+            nintendo_ds_menu
             ;;
         4)
-            exec ./scripts/nintendo/gb.sh
+            nintendo_gb_menu
             ;;
         5)
-            exec ./scripts/nintendo/gba.sh
+            nintendo_gba_menu
             ;;
         6)
-            exec ./scripts/nintendo/gbc.sh
+            nintendo_gbc_menu
             ;;
         7)
-            exec ./scripts/nintendo/nes.sh
+            nintendo_nes_menu
             ;;
         8)
-            exec ./scripts/nintendo/snes.sh
+            nintendo_snes_menu
             ;;
         9)
-            exec ./scripts/nintendo/vb.sh
+			nintendo_vb_menu
             ;;
         10)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -342,8 +344,8 @@ while true; do
 sega_menu() {
 while true; do
     clear
-    printf "$sega_menu_header"
-    printf "$sega_menu_list"
+    printf '%s' "$sega_menu_header"
+    printf '%s' "$sega_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -352,31 +354,31 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/sega/32x.sh
+            sega_32x_menu
             ;;
         2)
-            exec ./scripts/sega/gg.sh
+            sega_gg_menu
             ;;
         3)
-            exec ./scripts/sega/gen.sh
+            sega_gen_menu
             ;;
         4)
-            exec ./scripts/sega/ms.sh
+            sega_ms_menu
             ;;
         5)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac
@@ -386,8 +388,8 @@ while true; do
 snk_menu() {
 while true; do
     clear
-    printf "$snk_menu_header"
-    printf "$snk_menu_list"
+    printf '%s' "$snk_menu_header"
+    printf '%s' "$snk_menu_list"
     read -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -396,22 +398,22 @@ while true; do
 
     case $choice in
         1)
-            exec ./scripts/snk/ngpc.sh
+            snk_ngpc_menu
             ;;
         2)
-            exec ./igirst.sh
+            main_menu
             ;;
         0)
-            printf "$quit"
+            printf '%s' "$quit"
             sleep 1
             clear && exit
             ;;
         "")
-            printf "$empty_choice"
+            printf '%s' "$empty_choice"
             sleep 1
             ;;
         *)
-            printf "$invalid_choice $choice"
+            printf '%s' "$invalid_choice $choice"
             sleep 1
             ;;
         esac

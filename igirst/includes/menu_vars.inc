@@ -1,13 +1,19 @@
-#Common menu variables
-choose="Choose a Platform"
-menu_row_1="            ****************************************************"
-menu_row_2="            *                                                  *"
-menu_row_3="            *                IGIR SHELL TOOLS                  *"
-menu_row_4="            *                                                  *"
-menu_row_6="            *                                                  *"
-menu_row_7="            ****************************************************"
+#!/bin/bash
 
-command_menu_list="Choose a command (0-5):
+# Common menu variables
+ choose="Choose a Platform"
+
+ menu_row_1="            ****************************************************"
+ menu_row_2="            *                                                  *"
+ menu_row_3="            *                IGIR SHELL TOOLS                  *"
+ menu_row_4="            *                                                  *"
+ menu_row_6="            *                                                  *"
+ menu_row_7="            ****************************************************"
+
+var="vars=("dat" "input" "output" "backup" "report" "regions" "options" "exclude")"
+
+# Menu headers and lists
+ command_menu_list="Choose a command (0-5):
 
 1: Generate Report Only
 2: Scan and Copy Roms + Generate Report
@@ -17,7 +23,7 @@ command_menu_list="Choose a command (0-5):
 0: Quit
 
 "
-command_yes_no_list="(0-4):
+ command_yes_no_list="(0-4):
 
 1: Yes
 2: No
@@ -27,7 +33,7 @@ command_yes_no_list="(0-4):
 
 "
 
-main_menu_header="
+ main_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -38,7 +44,7 @@ $menu_row_7
 
 "
 
-main_menu_list="$choose or Manufacturer(0-5):
+ main_menu_list="$choose or Manufacturer(0-5):
 
 1: Atari
 2: NEC
@@ -49,7 +55,7 @@ main_menu_list="$choose or Manufacturer(0-5):
 
 "
 
-atari_menu_header="
+ atari_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -60,7 +66,7 @@ $menu_row_7
 
 "
 
-atari_menu_list="$choose(0-6):
+ atari_menu_list="$choose(0-6):
 
 1: 2600
 2: 5200
@@ -72,7 +78,7 @@ atari_menu_list="$choose(0-6):
 
 "
 
-nec_menu_header="
+ nec_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -83,7 +89,7 @@ $menu_row_7
 
 "
 
-nec_menu_list="$choose(0-2):
+ nec_menu_list="$choose(0-2):
 
 1: TurboGrafx 16\PC Engine
 2: Main Menu
@@ -91,7 +97,7 @@ nec_menu_list="$choose(0-2):
 
 "
 
-nintendo_menu_header="
+ nintendo_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -102,7 +108,7 @@ $menu_row_7
 
 "
 
-nintendo_menu_list="$choose(0-10):
+ nintendo_menu_list="$choose(0-10):
 
 1: 3DS
 2: 64
@@ -118,7 +124,7 @@ nintendo_menu_list="$choose(0-10):
 
 "
 
-nintendo_3ds_menu_header="
+ nintendo_3ds_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -129,7 +135,7 @@ $menu_row_7
             
 "
 
-nintendo_64_menu_header="
+ nintendo_64_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -140,7 +146,7 @@ $menu_row_7
             
 "
 
-nintendo_ds_menu_header="
+ nintendo_ds_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -151,7 +157,7 @@ $menu_row_7
             
 "
 
-nintendo_gb_menu_header="
+ nintendo_gb_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -162,7 +168,7 @@ $menu_row_7
             
 "
 
-nintendo_gbc_menu_header="
+ nintendo_gbc_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -173,7 +179,7 @@ $menu_row_7
             
 "
 
-nintendo_gba_menu_header="
+ nintendo_gba_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -184,7 +190,7 @@ $menu_row_7
             
 "
 
-nintendo_nes_menu_header="
+ nintendo_nes_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -195,7 +201,7 @@ $menu_row_7
             
 "
 
-nintendo_snes_menu_header="
+ nintendo_snes_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -206,7 +212,7 @@ $menu_row_7
             
 "
 
-nintendo_vb_menu_header="
+ nintendo_vb_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -217,7 +223,7 @@ $menu_row_7
             
 "
 
-sega_menu_header="
+ sega_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -228,7 +234,7 @@ $menu_row_7
 
 "
 
-sega_menu_list="$choose(0-5):
+ sega_menu_list="$choose(0-5):
 
 1: 32X
 2: Game Gear
@@ -239,7 +245,7 @@ sega_menu_list="$choose(0-5):
 
 "
 
-snk_menu_header="
+ snk_menu_header="
 $menu_row_1
 $menu_row_2
 $menu_row_3
@@ -250,7 +256,7 @@ $menu_row_7
 
 "
 
-snk_menu_list="$choose(0-2):
+ snk_menu_list="$choose(0-2):
 
 1: Neo Geo Pocket Color
 2: Main Menu
