@@ -4,3 +4,4 @@
 # Keep these files out of the final ZIP
 README.md export-ignore
 .gitattributes export-ignore
+.gitignore export-ignore
