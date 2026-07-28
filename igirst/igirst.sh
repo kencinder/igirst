@@ -8,8 +8,6 @@ source "includes/menu_functions.inc"
 source "includes/menu_vars.inc"
 set +a
 
-clear
-
 # Check for IGIR Binary
 FILE="$igir_binary"
 

@@ -1,19 +1,27 @@
 #!/bin/bash
 
-# Common menu variables
- choose="Choose a Platform"
+			# Common menu variables
 
- menu_row_1="            ****************************************************"
- menu_row_2="            *                                                  *"
- menu_row_3="            *                IGIR SHELL TOOLS                  *"
- menu_row_4="            *                                                  *"
- menu_row_6="            *                                                  *"
- menu_row_7="            ****************************************************"
+
+choose="Choose a Platform"
+
+menu_top="			****************************************************
+			*                                                  *
+			*                 IGIR SHELL TOOLS                 *
+			*                                                  *"
+
+menu_bottom="			*                                                  *
+			****************************************************"
 
 var="vars=("dat" "input" "output" "backup" "report" "regions" "options" "exclude")"
 
-# Menu headers and lists
- command_menu_list="Choose a command (0-5):
+
+			# Menu headers and lists
+
+
+	# Command Menu #
+
+command_menu_list="Choose a command (0-5):
 
 1: Generate Report Only
 2: Scan and Copy Roms + Generate Report
@@ -23,7 +31,7 @@ var="vars=("dat" "input" "output" "backup" "report" "regions" "options" "exclude
 0: Quit
 
 "
- command_yes_no_list="(0-4):
+command_yes_no_list="(0-4):
 
 1: Yes
 2: No
@@ -33,18 +41,16 @@ var="vars=("dat" "input" "output" "backup" "report" "regions" "options" "exclude
 
 "
 
- main_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                    Main Menu                     *
-$menu_row_6
-$menu_row_7
+	# Main Menu #
+
+main_menu_header="
+$menu_top
+			*                    Main Menu                     *
+$menu_bottom
 
 "
 
- main_menu_list="$choose or Manufacturer(0-5):
+main_menu_list="$choose or Manufacturer(0-5):
 
 1: Atari
 2: NEC
@@ -55,18 +61,16 @@ $menu_row_7
 
 "
 
- atari_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                     Atari                        *
-$menu_row_6
-$menu_row_7
+	# Atari Menu #
+
+atari_menu_header="
+$menu_top
+			*                      Atari                       *
+$menu_bottom
 
 "
 
- atari_menu_list="$choose(0-6):
+atari_menu_list="$choose(0-6):
 
 1: 2600
 2: 5200
@@ -78,18 +82,51 @@ $menu_row_7
 
 "
 
- nec_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                      NEC                         *
-$menu_row_6
-$menu_row_7
+atari_2600_menu_header="
+$menu_top
+			*                   Atari - 2600                   *
+$menu_bottom
+            
+"
+
+atari_5200_menu_header="
+$menu_top
+			*                   Atari - 5200                   *
+$menu_bottom
+            
+"
+
+atari_7800_menu_header="
+$menu_top
+			*                   Atari - 7800                   *
+$menu_bottom
+            
+"
+
+atari_jaguar_menu_header="
+$menu_top
+			*                  Atari - Jaguar                  *
+$menu_bottom
+            
+"
+
+atari_lynx_menu_header="
+$menu_top
+			*                   Atari - Lynx                   *
+$menu_bottom
+            
+"
+	# NEC Menu #
+
+
+nec_menu_header="
+$menu_top
+			*                      NEC                         *
+$menu_bottom
 
 "
 
- nec_menu_list="$choose(0-2):
+nec_menu_list="$choose(0-2):
 
 1: TurboGrafx 16\PC Engine
 2: Main Menu
@@ -97,18 +134,23 @@ $menu_row_7
 
 "
 
- nintendo_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                    Nintendo                      *
-$menu_row_6
-$menu_row_7
+nec_tg16_menu_header="
+$menu_top
+			*               NEC - TurboGrafx-16                *
+$menu_bottom
+            
+"
+
+	# Nintendo Menu #
+
+nintendo_menu_header="
+$menu_top
+			*                    Nintendo                      *
+$menu_bottom
 
 "
 
- nintendo_menu_list="$choose(0-10):
+nintendo_menu_list="$choose(0-10):
 
 1: 3DS
 2: 64
@@ -124,117 +166,79 @@ $menu_row_7
 
 "
 
- nintendo_3ds_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                 Nintendo - 3DS                   *
-$menu_row_6
-$menu_row_7
+nintendo_3ds_menu_header="
+$menu_top
+			*                  Nintendo - 3DS                  *
+$menu_bottom
             
 "
 
- nintendo_64_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                 Nintendo - 64                    *
-$menu_row_6
-$menu_row_7
+nintendo_64_menu_header="
+$menu_top
+			*                  Nintendo - 64                   *
+$menu_bottom
             
 "
 
- nintendo_ds_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                 Nintendo - DS                    *
-$menu_row_6
-$menu_row_7
+nintendo_ds_menu_header="
+$menu_top
+			*                  Nintendo - DS                   *
+$menu_bottom
             
 "
 
- nintendo_gb_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *               Nintendo - Game Boy                *
-$menu_row_6
-$menu_row_7
+nintendo_gb_menu_header="
+$menu_top
+			*                Nintendo - Game Boy               *
+$menu_bottom
             
 "
 
- nintendo_gbc_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *            Nintendo - Game Boy Color             *
-$menu_row_6
-$menu_row_7
+nintendo_gbc_menu_header="
+$menu_top
+			*             Nintendo - Game Boy Color            *
+$menu_bottom
             
 "
 
- nintendo_gba_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *          Nintendo - Game Boy Advance             *
-$menu_row_6
-$menu_row_7
+nintendo_gba_menu_header="
+$menu_top
+			*            Nintendo - Game Boy Advance           *
+$menu_bottom
             
 "
 
- nintendo_nes_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *     Nintendo - Nintendo Entertainment System     *
-$menu_row_6
-$menu_row_7
+nintendo_nes_menu_header="
+$menu_top
+			*     Nintendo - Nintendo Entertainment System     *
+$menu_bottom
             
 "
 
- nintendo_snes_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *  Nintendo - Super Nintendo Entertainment System  *
-$menu_row_6
-$menu_row_7
+nintendo_snes_menu_header="
+$menu_top
+			*  Nintendo - Super Nintendo Entertainment System  *
+$menu_bottom
             
 "
 
- nintendo_vb_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *             Nintendo - Virtual Boy               *
-$menu_row_6
-$menu_row_7
+nintendo_vb_menu_header="
+$menu_top
+			*              Nintendo - Virtual Boy              *
+$menu_bottom
             
 "
 
- sega_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                      Sega                        *
-$menu_row_6
-$menu_row_7
+	# SEGA Menu #
+
+sega_menu_header="
+$menu_top
+			*                       SEGA                       *
+$menu_bottom
 
 "
 
- sega_menu_list="$choose(0-5):
+sega_menu_list="$choose(0-5):
 
 1: 32X
 2: Game Gear
@@ -245,21 +249,54 @@ $menu_row_7
 
 "
 
- snk_menu_header="
-$menu_row_1
-$menu_row_2
-$menu_row_3
-$menu_row_4
-            *                      SNK                         *
-$menu_row_6
-$menu_row_7
+sega_32x_menu_header="
+$menu_top
+			*                    SEGA - 32X                    *
+$menu_bottom
+            
+"
+
+sega_gg_menu_header="
+$menu_top
+			*                 SEGA - Game Gear                 *
+$menu_bottom
+            
+"
+
+sega_gen_menu_header="
+$menu_top
+			*             SEGA - Genesis\Mega Drive            *
+$menu_bottom
+            
+"
+
+sega_ms_menu_header="
+$menu_top
+			*               SEGA - Master System               *
+$menu_bottom
+            
+"
+
+	# SNK Menu #
+
+snk_menu_header="
+$menu_top
+			*                      SNK                         *
+$menu_bottom
 
 "
 
- snk_menu_list="$choose(0-2):
+snk_menu_list="$choose(0-2):
 
 1: Neo Geo Pocket Color
 2: Main Menu
 0: Quit
 
+"
+
+snk_ngpc_menu_header="
+$menu_top
+			*            SNK - Neo Geo Pocket Color            *
+$menu_bottom
+            
 "

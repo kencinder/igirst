@@ -5,7 +5,7 @@ while true; do
     clear
     printf '%s' "$main_menu_header"
     printf '%s' "$main_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -49,7 +49,7 @@ while true; do
     clear
     printf '%s' "$current_menu_header"
     printf '%s' "$command_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -63,74 +63,12 @@ while true; do
             ;;
         2)
             command="copy report"
-            yes_no_prompt="$backup_prompt"
-            clear
-            command_yes_no
-            if [[ "$yes_no" == "yes" ]]; then
-                command+=" clean --clean-backup "
-                clear
-                printf '%s' "$current_menu_header"
-                printf '%s' "$backups_on"
-                    while true; do
-                        read -n 1 -s -r -p "$backup_continue" key
-                            if [[ $key == "y" || $key == "Y" ]]; then
-                                break
-                            else
-                                eval "$current_menu"
-                            fi
-                    done
-            elif [[ "$yes_no" == "no" ]]; then
-                backup=""
-                clear
-                printf '%s' "$current_menu_header"
-                printf '%s' "$backups_off"
-                    while true; do
-                        read -n 1 -s -r -p "$backup_continue" key
-                            if [[ $key == "y" || $key == "Y" ]]; then
-                                break
-                            else
-                                eval "$current_menu"
-                            fi
-                    done
-            else
-                eval "$current_menu"
-            fi
+			eval backup_choice
             break
             ;;
         3)
             command="move report"
-            yes_no_prompt="$backup_prompt"
-            clear
-            command_yes_no
-            if [[ "$yes_no" == "yes" ]]; then
-                command+=" clean --clean-backup "
-                clear
-                printf '%s' "$current_menu_header"
-                printf '%s' "$backups_on"
-                    while true; do
-                        read -n 1 -s -r -p "$backup_continue" key
-                            if [[ $key == "y" || $key == "Y" ]]; then
-                                break
-                            else
-                                eval "$current_menu"
-                            fi
-                    done
-            elif [[ "$yes_no" == "no" ]]; then
-                backup=""
-				clear
-                printf '%s' "$current_menu_header"
-                printf '%s' "$backups_off"
-                    while true; do
-                        read -n 1 -s -r -p "$backup_continue" key
-                            if [[ $key == "y" || $key == "Y" ]]; then
-                                break
-                            else
-                                eval "$current_menu"
-                            fi
-                    done
-            else
-                eval "$current_menu"
-            fi
+			eval backup_choice
             break
             ;;
         4)
@@ -160,8 +98,8 @@ command_yes_no() {
 while true; do
     clear
     printf '%s' "$current_menu_header"
-    printf '%s' "$yes_no_prompt $command_yes_no_list"
-    read -p "Select an option: " choice
+    printf '%s' "$backup_prompt $command_yes_no_list"
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -177,25 +115,25 @@ while true; do
             break
             ;;
         3)
-            :
+            eval "$current_menu"
             break
             ;;
-        4)
-            exec igirst.sh
-            ;;
-        0)
-            printf '%s' "$quit"
-            sleep 1
-            clear && exit
-            ;;
-        "")
-            printf '%s' "$empty_choice"
-            sleep 1
-            ;;
-        *)
-            printf '%s' "$invalid_choice $choice"
-            sleep 1
-            ;;
+		4)
+			main_menu
+			;;
+		0)
+			printf '%s' "$quit"
+			sleep 1
+			clear && exit
+			;;
+		"")
+			printf '%s' "$empty_choice"
+			sleep 1
+			;;
+		*)
+			printf '%s' "$invalid_choice $choice"
+			sleep 1
+			;;
         esac
     done
 }
@@ -203,9 +141,10 @@ while true; do
 atari_menu() {
 while true; do
     clear
+	previous_menu="atari_menu"
     printf '%s' "$atari_menu_header"
     printf '%s' "$atari_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -250,9 +189,10 @@ while true; do
 nec_menu() {
 while true; do
     clear
+	previous_menu="nec_menu"
     printf '%s' "$nec_menu_header"
     printf '%s' "$nec_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -285,9 +225,10 @@ while true; do
 nintendo_menu() {
 while true; do
     clear
+	previous_menu="nintendo_menu"
     printf '%s' "$nintendo_menu_header"
     printf '%s' "$nintendo_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -344,9 +285,10 @@ while true; do
 sega_menu() {
 while true; do
     clear
+	previous_menu="sega_menu"
     printf '%s' "$sega_menu_header"
     printf '%s' "$sega_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -388,9 +330,10 @@ while true; do
 snk_menu() {
 while true; do
     clear
+	previous_menu="snk_menu"
     printf '%s' "$snk_menu_header"
     printf '%s' "$snk_menu_list"
-    read -p "Select an option: " choice
+    read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
