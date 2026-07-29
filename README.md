@@ -4,7 +4,7 @@
         <tr><td><a href="README.md#Features">Supported Features</a></td><td><a href="README.md#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
-A collection of Linux shell scripts I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with a GUI-like Menu\
+A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with a GUI-like Menu\
 for selecting Copy\Move with option for Backup and Reports generated matching the DAT used\
 <sub>Archive support is planned using IGIR's native ZIP and external 7zip</sub>
 
