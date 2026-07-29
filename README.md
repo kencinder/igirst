@@ -1,32 +1,59 @@
 # IGIR Shell Tools
 
+<table>
+        <tr><td><a href="README.md#Features">Supported Features</a></td><td><a href="README.md#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
+</table>
 
-**Currently `WIP` - Issues and Pull Requests not currently accepted\
-I am working on finishing up initial systems and fine tuning for public use\
-\
-Everything is currently in a functioning state, except for systems under a manufacturer who's scripts are not present\
-I recommend running a report only first, and using the options with backup or having your own backups beforehand\
-Use what is here at your own risk!**
-\
-\
-\
-Clone this repository or download the latest files [here](https://github.com/kencinder/igirst/archive/refs/heads/master.zip)
-\
-\
-\
-A collection of Linux shell scripts I have put together to make using [IGIR](https://github.com/emmercm/igir) easier
+A collection of Linux shell scripts I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with a GUI-like Menu\
+for selecting Copy\Move with option for Backup and Reports generated matching the DAT used\
+<sub>Archive support is planned using IGIR's native ZIP and external 7zip</sub>
 
-Currently only does scanning, with copy/move, selectable backup and report generation of cart based systems
+`WIP` - Issues and Pull Requests not currently accepted
+<br>
+<br>
+> Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
+> Defaults are present for everything but your ROMs that should work out of the box
+> 
+> The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from anywhere
+>
+>`DAT` files go in the `dats` directory, under the platform/manufacturer, or the location of your choice in `igirst.cfg`\
+> They can be zipped or unzipped, the config defaults to using a systems No-Intro Parent-Clone XML DAT
+<br>
 
-The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from anywhere
+### Features
+<table>
+        <tr><th>Feature</th><th>Status</th></tr>
+        <tr><td>Report</td><td>:white_check_mark:</td></tr>
+        <tr><td>Copy</td><td>:white_check_mark:</td></tr>
+        <tr><td>Move</td><td>:white_check_mark:</td></tr>
+        <tr><td>Backup</td><td>:white_check_mark:</td></tr>
+        <tr><td>Recycle</td><td><a href="README.md#recycle">See</a></td></tr>
+        <tr><td>Zip</td><td>:construction:</td></tr>
+        <tr><td>7z</td><td>:construction:</td></tr>
+</table>
 
-`DAT` files go in the `dats` directory, under the platform/manufacturer, or the location of your choice in `igirst.cfg`\
-They can be zipped or unzipped, the config defaults to using a systems No-Intro Parent-Clone XML DAT
+### Systems
 
-Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
-Defaults are present for everything but your ROMs that should work out of the box
-\
-\
-My collection is entirely in 7zip form and IGIR does not support creating archives in 7z format at the time of this writing.
+<table>
+        <tr><th>System</th><th>Status</th></tr>
+        <tr><td>Atari - 2600</td><td>:white_check_mark:</td></tr>
+        <tr><td>Atari - 5200</td><td>:white_check_mark:</td></tr>
+        <tr><td>Atari - 7800</td><td>:white_check_mark:</td></tr>
+        <tr><td>Atari - Jaguar</td><td>:white_check_mark:</td></tr>
+        <tr><td>Atari - Lynx</td><td>:white_check_mark:</td></tr>
+        <tr><td>NEC - PC Engine\TurboGrafx-16</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - 3DS</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - 64</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - DS</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - Game Boy</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - Game Boy Advance</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - Game Boy Color</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - NES</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - SNES</td><td>:white_check_mark:</td></tr>
+        <tr><td>Nintendo - Virtual Boy</td><td>:white_check_mark:</td></tr>
+</table>
 
-I plan to add support for extracting/adding zip archives when time permits, and a possibly a way to unpack and scan/repack to 7z.
+### <sub>Recycle</sub>
+I do not plan to implement the use of IGIR's `Recycle` with the `Clean` flag\
+Without backups this can be destructive on systems without a Recycle/Trash as it permanently deletes files\
+Answering `No` when asked to back up, leaves files in place. `Yes` means Unused backups can be deleted if you wish.
