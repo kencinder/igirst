@@ -51,6 +51,11 @@ for selecting Copy\Move with option for Backup and Reports generated matching th
         <tr><td>Nintendo - NES</td><td>:white_check_mark:</td></tr>
         <tr><td>Nintendo - SNES</td><td>:white_check_mark:</td></tr>
         <tr><td>Nintendo - Virtual Boy</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sega - 32X</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sega - Game Gear</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sega - Genesis\Mega Drive</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sega - Master System</td><td>:white_check_mark:</td></tr>
+        <tr><td>SNK - Neo Geo Pocket Color</td><td>:white_check_mark:</td></tr>
 </table>
 
 ### <sub>Recycle</sub>
