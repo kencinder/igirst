@@ -4,20 +4,22 @@
         <tr><td><a href="README.md#Features">Supported Features</a></td><td><a href="README.md#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
-A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with a GUI-like Menu\
+A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with an interactive text Menu\
 for selecting Copy\Move with option for Backup and Reports generated matching the DAT used\
 <sub>Archive support is planned using IGIR's native ZIP and external 7zip</sub>
+
+<sub>Windows users can run the script with WSL and the IGIR Linux binary</sub>\
+<sub>MacOS users can change `#!/bin/bash` to `#!/usr/bin/env bash` in the script and included files</sub>
 
 `WIP` - Issues and Pull Requests not currently accepted
 <br>
 <br>
 > Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
-> Defaults are present for everything but your ROMs that should work out of the box
+> Defaults are present for everything but your ROM input path, that should work out of the box
 > 
-> The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from anywhere
+> The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from any path
 >
->`DAT` files go in the `dats` directory, under the platform/manufacturer, or the location of your choice in `igirst.cfg`\
-> They can be zipped or unzipped, the config defaults to using a systems No-Intro Parent-Clone XML DAT
+>`DAT` files can go in the `dats` directory, under the platform/manufacturer, or set the location in `igirst.cfg`\
 <br>
 
 ### Features
