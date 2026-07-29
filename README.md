@@ -19,7 +19,7 @@ for selecting Copy\Move with option for Backup and Reports generated matching th
 > 
 > The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from any path
 >
->`DAT` files can go in the `dats` directory, under the platform/manufacturer, or set the location in `igirst.cfg`\
+>`DAT` files can go in the `dats` directory, under the platform/manufacturer, or set the location in `igirst.cfg`
 <br>
 
 ### Features
