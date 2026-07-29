@@ -45,7 +45,7 @@ read -n 1 -s -r -p "$continue"
 
 command_set() {
 system_vars
-	printf "$current_menu_header"
+	printf '%s' "$current_menu_header"
 #Check required variables are set
 	var_check
 #Load command menu and IGIR command script
@@ -63,28 +63,28 @@ done
 
 var_check() {
 if [ -z "$dat" ]; then
-    printf "DAT $var_missing igirst.cfg\n\n"
+    printf '%s\n\n' "DAT $var_missing igirst.cfg"
 fi
 
 if [ -z "$input" ]; then
-    printf "INPUT $var_missing igirst.cfg\n\n"
+    printf '%s\n\n' "INPUT $var_missing igirst.cfg"
 fi
 
 if [ -z "$output" ]; then
-    printf "OUPUT $var_missing igirst.cfg\n\n"
+    printf '%s\n\n' "OUPUT $var_missing igirst.cfg"
 fi
 
 if [ -z "$backup" ]; then
-    printf "BACKUP $var_missing igirst.cfg\n\n"
+    printf '%s\n\n' "BACKUP $var_missing igirst.cfg"
 fi
 
 if [ -z "$report" ]; then
-    printf "REPORT $var_missing igirst.cfg\n\n"
+    printf '%s\n\n' "REPORT $var_missing igirst.cfg"
 fi
 
 if [[ -z "$dat" || -z "$input" || -z "$output" || -z "$backup" || -z "$report" ]]; then
     read -n 1 -s -r -p "$continue"
-    exec $previous_menu
+    eval $previous_menu
 fi
 }
 

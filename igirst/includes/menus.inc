@@ -72,7 +72,7 @@ while true; do
             break
             ;;
         4)
-            eval $previous_menu
+            eval "$previous_menu"
             ;;
         5)
             main_menu
