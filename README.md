@@ -15,7 +15,7 @@ for selecting Copy\Move with option for Backup and Reports generated matching th
 <br>
 <br>
 > Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
-> Defaults are present for everything but your ROM input path, that should work out of the box
+> Defaults are present for everything mandatory but your ROM input path, that should work out of the box
 > 
 > The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from any path
 >
