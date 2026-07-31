@@ -4,8 +4,13 @@
         <tr><td><a href="README.md#Features">Supported Features</a></td><td><a href="README.md#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
-A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier, with an interactive text Menu\
-for selecting Copy\Move with option for Backup and Reports generated matching the DAT used\
+A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier
+
+Menu driven selection of Manufacturer and Systems, and the IGIR command to use\
+IGIR options and flags can be set on a per system basis in `igirst.cfg`
+
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cb8e7a5d-f18e-4979-adcd-8fd5f525e049" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/83cfeaf8-d77b-4824-931b-359b596bad16" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/f2c9523b-84d4-471a-88db-8ffd7f75e80b" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/4f5843b5-fe25-4734-9661-df8f85ec638e" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cfe8a17a-13a5-40df-a6c5-a06b5bd67e1e" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/aa3a4b3c-6eb5-47f1-b571-c50f55c70a8b" />
+
 <sub>Archive support is planned using IGIR's native ZIP and external 7zip</sub>
 
 <sub>Windows users can run the script with WSL and the IGIR Linux binary</sub>\
@@ -14,12 +19,9 @@ for selecting Copy\Move with option for Backup and Reports generated matching th
 `WIP` - Issues and Pull Requests not currently accepted
 <br>
 <br>
-> Configuration for each system is in `igirst.cfg` and may need modified to suit your preferences\
-> Defaults are present for everything mandatory but your ROM input path, that should work out of the box
+> Configuration for everything is in `igirst.cfg`
 > 
-> The `IGIR` binary location can be set in `igirst.cfg` and defaults to `./igir` but should work from any path
->
->`DAT` files can go in the `dats` directory, under the platform/manufacturer, or set the location in `igirst.cfg`
+> Defaults set for everything mandatory except your ROM input path
 <br>
 
 ### Features
