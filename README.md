@@ -16,7 +16,6 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
 <sub>Windows users can run the script with WSL and the IGIR Linux binary</sub>\
 <sub>MacOS users can change `#!/bin/bash` to `#!/usr/bin/env bash` in the script and included files</sub>
 
-`WIP` - Issues and Pull Requests not currently accepted
 <br>
 <br>
 > Configuration for everything is in `igirst.cfg`
