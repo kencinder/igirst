@@ -1,7 +1,7 @@
 # IGIR Shell Tools
 
 <table>
-        <tr><td><a href="https://github.com/kencinder/igirst#features">Supported Features</a></td><td><a href="https://github.com/kencinder/igirst#sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
+        <tr><td><a href="https://github.com/kencinder/igirst#features">Supported Features</a></td><td><a href="https://github.com/kencinder/igirst#systems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
 A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier
