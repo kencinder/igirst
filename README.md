@@ -18,6 +18,7 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
 
 <br>
 <br>
+
 > Configuration for everything is in `igirst.cfg`
 > 
 > Defaults set for everything mandatory except your ROM input path
