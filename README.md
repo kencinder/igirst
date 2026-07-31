@@ -1,7 +1,7 @@
 # IGIR Shell Tools
 
 <table>
-        <tr><td><a href="README.md#Features">Supported Features</a></td><td><a href="README.md#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
+        <tr><td><a href="https://github.com/kencinder/igirst#Features">Supported Features</a></td><td><a href="https://github.com/kencinder/igirst#Sytems">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
 A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier
@@ -31,7 +31,7 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
         <tr><td>Copy</td><td>:white_check_mark:</td></tr>
         <tr><td>Move</td><td>:white_check_mark:</td></tr>
         <tr><td>Backup</td><td>:white_check_mark:</td></tr>
-        <tr><td>Recycle</td><td><a href="README.md#recycle">See</a></td></tr>
+        <tr><td>Recycle</td><td><a href="https://github.com/kencinder/igirst#Recycle">See</a></td></tr>
         <tr><td>Zip</td><td>:construction:</td></tr>
         <tr><td>7z</td><td>:construction:</td></tr>
 </table>
