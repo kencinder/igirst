@@ -63,16 +63,16 @@ while true; do
             ;;
         2)
             command="copy report"
-			eval backup_choice
+			backup_choice
             break
             ;;
         3)
             command="move report"
-			eval backup_choice
+			backup_choice
             break
             ;;
         4)
-            eval "$previous_menu"
+            "$previous_menu"
             ;;
         5)
             main_menu
@@ -115,7 +115,7 @@ while true; do
             break
             ;;
         3)
-            eval "$current_menu"
+            "$current_menu"
             break
             ;;
 		4)
