@@ -31,8 +31,8 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
         <tr><td>Copy</td><td>:white_check_mark:</td></tr>
         <tr><td>Move</td><td>:white_check_mark:</td></tr>
         <tr><td>Backup</td><td>:white_check_mark:</td></tr>
-        <tr><td>Recycle</td><td><a href="https://github.com/kencinder/igirst#recycle">See</a></td></tr>
-        <tr><td>Zip</td><td>:construction:</td></tr>
+        <tr><td>Zip</td><td>:white_check_mark: <a href="https://github.com/kencinder/igirst#zip">See</a></td></tr>
+        <tr><td>Recycle</td><td>:x: <a href="https://github.com/kencinder/igirst#recycle">See</a></td></tr>
         <tr><td>7z</td><td>:construction:</td></tr>
 </table>
 
@@ -61,6 +61,10 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
         <tr><td>Sega - Master System</td><td>:white_check_mark:</td></tr>
         <tr><td>SNK - Neo Geo Pocket Color</td><td>:white_check_mark:</td></tr>
 </table>
+
+### <sub>Zip</sub>
+Using [IGIR's ZIP](https://igir.io/output/writing-archives/) feature is as simple as adding `zip` to a systems options in `igirst.cfg`
+I may expand on this further in the future with some ideas I have, but for now this works how it works with IGIR directly
 
 ### <sub>Recycle</sub>
 I do not plan to implement the use of IGIR's `Recycle` with the `Clean` flag\
