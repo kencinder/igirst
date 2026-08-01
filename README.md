@@ -30,9 +30,8 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
         <tr><td>Report</td><td>:white_check_mark:</td></tr>
         <tr><td>Copy</td><td>:white_check_mark:</td></tr>
         <tr><td>Move</td><td>:white_check_mark:</td></tr>
-        <tr><td>Backup</td><td>:white_check_mark:</td></tr>
+        <tr><td>Clean+Backup</td><td>:white_check_mark: <a href="https://github.com/kencinder/igirst#cleanbackup">See</a></td></tr>
         <tr><td>Zip</td><td>:white_check_mark: <a href="https://github.com/kencinder/igirst#zip">See</a></td></tr>
-        <tr><td>Recycle</td><td>:x: <a href="https://github.com/kencinder/igirst#recycle">See</a></td></tr>
         <tr><td>7z</td><td>:construction:</td></tr>
 </table>
 
@@ -61,6 +60,11 @@ IGIR options and flags can be set on a per system basis in `igirst.cfg`
         <tr><td>Sega - Master System</td><td>:white_check_mark:</td></tr>
         <tr><td>SNK - Neo Geo Pocket Color</td><td>:white_check_mark:</td></tr>
 </table>
+
+### <sub>Clean/Backup</sub>
+A safety check is done for `clean` that requires confirmation if `--clean-backup` isn't also present\
+Clean and backups are configured in `igirst.cfg` using the Additional IGIR Commands section\
+by adding `clean` with `--clean-backup` and optionally using the defined Backup Variables for clean section
 
 ### <sub>Zip</sub>
 Using [IGIR's ZIP](https://igir.io/output/writing-archives/) feature is as simple as adding `zip` to a systems options in `igirst.cfg`
