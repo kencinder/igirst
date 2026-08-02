@@ -9,7 +9,7 @@ A Linux shell script I have put together to make using [IGIR](https://github.com
 Menu driven selection of Manufacturer and Systems, and the IGIR command to use\
 IGIR options and flags can be set on a per system basis in `igirst.cfg`
 
-<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cb8e7a5d-f18e-4979-adcd-8fd5f525e049" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/83cfeaf8-d77b-4824-931b-359b596bad16" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/f2c9523b-84d4-471a-88db-8ffd7f75e80b" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/4f5843b5-fe25-4734-9661-df8f85ec638e" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cfe8a17a-13a5-40df-a6c5-a06b5bd67e1e" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/aa3a4b3c-6eb5-47f1-b571-c50f55c70a8b" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/cb8e7a5d-f18e-4979-adcd-8fd5f525e049" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/83cfeaf8-d77b-4824-931b-359b596bad16" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/f2c9523b-84d4-471a-88db-8ffd7f75e80b" />
 
 <sub>7z Archive support is planned using external 7zip</sub>
 
