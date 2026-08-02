@@ -4,7 +4,7 @@
         <tr><td><a href="https://github.com/kencinder/igirst#systems-currently-with-menu-support">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td></tr>
 </table>
 
-A Linux shell script I have put together to make using [IGIR](https://github.com/emmercm/igir) easier
+A Linux shell script to make using [IGIR](https://github.com/emmercm/igir) easier
 
 Menu driven selection of Manufacturer and Systems, and the IGIR COPY or MOVE command with Reports
 
