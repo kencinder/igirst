@@ -10,42 +10,35 @@ create_dat_filename() {
 	system_vars
 }
 
-backup_choice() {
+backup_check() {
 	clear
-	command_yes_no
-if [[ "$yes_no" == "yes" ]]; then
-	command+=" clean --clean-backup "
-	clear
-	printf '%s' "$current_menu_header"
-	printf '%s' "$backups_on"
-		while true; do
-			read -n 1 -s -r -p "$backup_continue" key
+    printf '%s' "$current_menu_header $backup_prompt"
+	if [[ "$command_add" == *"clean"* ]]; then
+    	if [[ "$command_add" != *"--clean-backup"* ]]; then
+			clear
+    		printf '%s' "$current_menu_header $backup_prompt"
+				while true; do
+					read -n 1 -s -r -p "$backup_continue" key
 				if [[ $key == "y" || $key == "Y" ]]; then
 					break
 				else
 					"$current_menu"
 				fi
 		done
-elif [[ "$yes_no" == "no" ]]; then
-	backup=""
-	clear
-	printf '%s' "$current_menu_header"
-	printf '%s' "$backups_off"
-		while true; do
-			read -n 1 -s -r -p "$backup_continue" key
-				if [[ $key == "y" || $key == "Y" ]]; then
-					break
-				else
-					"$current_menu"
-				fi
-		done
-else
-	"$current_menu"
-fi
+		fi
+	fi
+}
+
+command_add_check() {
+	if [[ -n "$command_add" ]]; then
+    	command+="$command_add "
+	else
+		:
+	fi
 }
 
 command_igir() {
-	./"$igir_binary" $command"$backup" --dat "$dat" --input "$input" --output "$output" $options -R $regions -r $regions -X "$exclude" --report-output "$report"
+	./"$igir_binary" $command --dat "$dat" --input "$input" --output "$output" $options -R $regions -r $regions -X "$exclude" --report-output "$report"
 
 	printf "\n"
 	read -n 1 -s -r -p "$continue"
@@ -72,26 +65,30 @@ done
 
 var_check() {
 if [ -z "$dat" ]; then
-    printf '%s\n\n' "DAT $var_missing igirst.cfg"
+    printf '%s\n\n' "DAT $var_missing"
 fi
 
 if [ -z "$input" ]; then
-    printf '%s\n\n' "INPUT $var_missing igirst.cfg"
+    printf '%s\n\n' "INPUT $var_missing"
 fi
 
-if [ -z "$output" ]; then
-    printf '%s\n\n' "OUPUT $var_missing igirst.cfg"
+if [ -z "$output_copy" ]; then
+    printf '%s\n\n' "OUTPUT COPY $var_missing"
+fi
+
+if [ -z "$output_move" ]; then
+    printf '%s\n\n' "OUTPUT MOVE $var_missing"
 fi
 
 if [ -z "$backup" ]; then
-    printf '%s\n\n' "BACKUP $var_missing igirst.cfg"
+    printf '%s\n\n' "BACKUP $var_missing"
 fi
 
 if [ -z "$report" ]; then
-    printf '%s\n\n' "REPORT $var_missing igirst.cfg"
+    printf '%s\n\n' "REPORT $var_missing"
 fi
 
-if [[ -z "$dat" || -z "$input" || -z "$output" || -z "$backup" || -z "$report" ]]; then
+if [[ -z "$dat" || -z "$input" || -z "$output_copy" || -z "$output_move" || -z "$backup" || -z "$report" ]]; then
     read -n 1 -s -r -p "$continue"
     $previous_menu
 fi

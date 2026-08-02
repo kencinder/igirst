@@ -13,7 +13,7 @@ menu_top="			****************************************************
 menu_bottom="			*                                                  *
 			****************************************************"
 
-var="vars=("dat" "input" "output" "backup" "report" "regions" "options" "exclude")"
+var="vars=("command_add" "dat" "input" "output_copy" "output_move" "backup" "report" "regions" "options" "exclude")"
 
 
 			# Menu headers and lists
@@ -28,15 +28,6 @@ command_menu_list="Choose a command (0-5):
 3: Scan and Move Roms + Generate Report
 4: Previous Menu
 5: Main Menu
-0: Quit
-
-"
-command_yes_no_list="(0-4):
-
-1: Yes
-2: No
-3: Previous Menu
-4: Main Menu
 0: Quit
 
 "

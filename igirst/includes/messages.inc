@@ -1,30 +1,23 @@
 #!/bin/bash
 
-backup_prompt="Backup Unused?"
+backup_prompt=" *** WARNING! *** Clean is enabled but backups are not. Are you sure you want to continue?
+"
 
 backup_continue="
-Press Y to continue or any key to return to the previous menu
-"
-
-backups_off="
-Backups Disabled! Unused files will be left where they are
-"
-
-backups_on="
-Backups enabled!
+ Press Y to continue or any other key to return to the previous menu
 "
 
 continue="
-Press any key to continue...
+ Press any key to continue...
 "
 
 empty_choice="
-No choice entered"
+ No choice entered"
 
-var_missing="location not set in"
+var_missing="location not set in igirst.cfg"
 
 invalid_choice="
-Invalid option:"
+ Invalid option:"
 
 no_igir="
                                           *** IGIR not found! ***
@@ -34,5 +27,5 @@ no_igir="
 "
 
 quit="
-Exiting IGIR Shell Tools...
+ Exiting IGIR Shell Tools...
 "

@@ -3,8 +3,7 @@
 main_menu() {
 while true; do
     clear
-    printf '%s' "$main_menu_header"
-    printf '%s' "$main_menu_list"
+    printf '%s' "$main_menu_header $main_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -47,8 +46,7 @@ while true; do
 command_menu() {
 while true; do
     clear
-    printf '%s' "$current_menu_header"
-    printf '%s' "$command_menu_list"
+    printf '%s' "$current_menu_header $command_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -58,17 +56,23 @@ while true; do
     case $choice in
         1)
             backup=""
-            command="report"
+			command="report"
             break
             ;;
         2)
-            command="copy report"
-			backup_choice
+            command="copy "
+			command_add_check
+			command+="report"
+			output="$output_copy"
+			backup_check
             break
             ;;
         3)
-            command="move report"
-			backup_choice
+            command="move "
+			command_add_check
+			command+="report"
+			output="$output_move"
+			backup_check
             break
             ;;
         4)
@@ -94,56 +98,11 @@ while true; do
     done
 }
 
-command_yes_no() {
-while true; do
-    clear
-    printf '%s' "$current_menu_header"
-    printf '%s' "$backup_prompt $command_yes_no_list"
-    read -r -p "Select an option: " choice
-
-    if [ -z "$choice" ]; then
-        choice=""
-    fi
-
-    case $choice in
-        1)
-            yes_no="yes"
-            break
-            ;;
-        2)
-            yes_no="no"
-            break
-            ;;
-        3)
-            "$current_menu"
-            break
-            ;;
-		4)
-			main_menu
-			;;
-		0)
-			printf '%s' "$quit"
-			sleep 1
-			clear && exit
-			;;
-		"")
-			printf '%s' "$empty_choice"
-			sleep 1
-			;;
-		*)
-			printf '%s' "$invalid_choice $choice"
-			sleep 1
-			;;
-        esac
-    done
-}
-
 atari_menu() {
 while true; do
     clear
 	previous_menu="atari_menu"
-    printf '%s' "$atari_menu_header"
-    printf '%s' "$atari_menu_list"
+    printf '%s' "$atari_menu_header $atari_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -190,8 +149,7 @@ nec_menu() {
 while true; do
     clear
 	previous_menu="nec_menu"
-    printf '%s' "$nec_menu_header"
-    printf '%s' "$nec_menu_list"
+    printf '%s' "$nec_menu_header $nec_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -226,8 +184,7 @@ nintendo_menu() {
 while true; do
     clear
 	previous_menu="nintendo_menu"
-    printf '%s' "$nintendo_menu_header"
-    printf '%s' "$nintendo_menu_list"
+    printf '%s' "$nintendo_menu_header $nintendo_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -286,8 +243,7 @@ sega_menu() {
 while true; do
     clear
 	previous_menu="sega_menu"
-    printf '%s' "$sega_menu_header"
-    printf '%s' "$sega_menu_list"
+    printf '%s' "$sega_menu_header $sega_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
@@ -331,8 +287,7 @@ snk_menu() {
 while true; do
     clear
 	previous_menu="snk_menu"
-    printf '%s' "$snk_menu_header"
-    printf '%s' "$snk_menu_list"
+    printf '%s' "$snk_menu_header $snk_menu_list"
     read -r -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
