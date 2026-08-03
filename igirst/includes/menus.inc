@@ -4,7 +4,7 @@ main_menu() {
 while true; do
     clear
     printf '%s' "$main_menu_header $main_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -26,7 +26,7 @@ while true; do
         5)
             snk_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -47,7 +47,7 @@ command_menu() {
 while true; do
     clear
     printf '%s' "$current_menu_header $command_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -55,8 +55,8 @@ while true; do
 
     case $choice in
         1)
-            backup=""
 			command="report"
+			output="$input"
             break
             ;;
         2)
@@ -75,13 +75,13 @@ while true; do
 			backup_check
             break
             ;;
-        4)
+        B|b)
             "$previous_menu"
             ;;
-        5)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -103,7 +103,7 @@ while true; do
     clear
 	previous_menu="atari_menu"
     printf '%s' "$atari_menu_header $atari_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -125,10 +125,10 @@ while true; do
         5)
             atari_lynx_menu
             ;;
-        6)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -150,7 +150,7 @@ while true; do
     clear
 	previous_menu="nec_menu"
     printf '%s' "$nec_menu_header $nec_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -160,10 +160,10 @@ while true; do
         1)
             nec_tg16_menu
             ;;
-        2)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -185,7 +185,7 @@ while true; do
     clear
 	previous_menu="nintendo_menu"
     printf '%s' "$nintendo_menu_header $nintendo_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -219,10 +219,10 @@ while true; do
         9)
 			nintendo_vb_menu
             ;;
-        10)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -244,7 +244,7 @@ while true; do
     clear
 	previous_menu="sega_menu"
     printf '%s' "$sega_menu_header $sega_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -263,10 +263,10 @@ while true; do
         4)
             sega_ms_menu
             ;;
-        5)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit
@@ -288,7 +288,7 @@ while true; do
     clear
 	previous_menu="snk_menu"
     printf '%s' "$snk_menu_header $snk_menu_list"
-    read -r -p "Select an option: " choice
+    read -rsn 1 -p "Select an option: " choice
 
     if [ -z "$choice" ]; then
         choice=""
@@ -298,10 +298,10 @@ while true; do
         1)
             snk_ngpc_menu
             ;;
-        2)
+        M|m)
             main_menu
             ;;
-        0)
+        Q|q)
             printf '%s' "$quit"
             sleep 1
             clear && exit

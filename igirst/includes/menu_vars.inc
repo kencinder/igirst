@@ -13,8 +13,6 @@ menu_top="			****************************************************
 menu_bottom="			*                                                  *
 			****************************************************"
 
-var="vars=("command_add" "dat" "input" "output_copy" "output_move" "backup" "report" "regions" "options" "exclude")"
-
 
 			# Menu headers and lists
 
@@ -26,9 +24,9 @@ command_menu_list="Choose a command (0-5):
 1: Generate Report Only
 2: Scan and Copy Roms + Generate Report
 3: Scan and Move Roms + Generate Report
-4: Previous Menu
-5: Main Menu
-0: Quit
+B: Previous Menu
+M: Main Menu
+Q: Quit
 
 "
 
@@ -48,7 +46,7 @@ main_menu_list="$choose or Manufacturer(0-5):
 3: Nintendo
 4: Sega
 5: SNK
-0: Quit
+Q: Quit
 
 "
 
@@ -68,8 +66,8 @@ atari_menu_list="$choose(0-6):
 3: 7800
 4: Jaguar
 5: Lynx
-6: Main Menu
-0: Quit
+M: Main Menu
+Q: Quit
 
 "
 
@@ -120,8 +118,8 @@ $menu_bottom
 nec_menu_list="$choose(0-2):
 
 1: TurboGrafx 16\PC Engine
-2: Main Menu
-0: Quit
+M: Main Menu
+Q: Quit
 
 "
 
@@ -152,8 +150,8 @@ nintendo_menu_list="$choose(0-10):
 7: Nintendo Entertainment System
 8: Super Nintendo Entertainment System
 9: Virtual Boy
-10: Main Menu
-0: Quit
+M: Main Menu
+Q: Quit
 
 "
 
@@ -235,8 +233,8 @@ sega_menu_list="$choose(0-5):
 2: Game Gear
 3: Genesis\Mega Drive
 4: Master System
-5: Main Menu
-0: Quit
+M: Main Menu
+Q: Quit
 
 "
 
@@ -280,8 +278,8 @@ $menu_bottom
 snk_menu_list="$choose(0-2):
 
 1: Neo Geo Pocket Color
-2: Main Menu
-0: Quit
+M: Main Menu
+Q: Quit
 
 "
 
