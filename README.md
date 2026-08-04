@@ -6,7 +6,8 @@
 
 A Linux shell script to make using [IGIR](https://github.com/emmercm/igir) easier
 
-Menu driven selection of Manufacturer and Systems, and the IGIR COPY or MOVE command with Reports
+Menu driven selection of Manufacturer/Platform and Systems, and the IGIR COPY or MOVE command with Reports
+Individual Systems can be selected, or commands can be run for an entire Manufacturer/Platform
 
 All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set in [the config](https://github.com/kencinder/igirst/blob/master/igirst/igirst.cfg) per system
 
@@ -21,7 +22,7 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
 
 > Configuration for everything is in `igirst.cfg`
 > 
-> Defaults set for everything mandatory except your ROM input path
+> Defaults are set for everything mandatory except your ROM input path
 
 ### Systems currently with Menu Support
 
