@@ -11,7 +11,8 @@ Individual Systems can be selected, or commands can be run for an entire Manufac
 
 All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set in [the config](https://github.com/kencinder/igirst/blob/master/igirst/igirst.cfg) per system
 
-<img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/cb8e7a5d-f18e-4979-adcd-8fd5f525e049" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/83cfeaf8-d77b-4824-931b-359b596bad16" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/f2c9523b-84d4-471a-88db-8ffd7f75e80b" />
+<img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/c773e072-37c3-4900-a86a-8c0e849c91d6" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/30a30b2a-8fe9-40de-a1e8-d954771ee9fb" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/548afffa-f049-465c-b19c-6fa5900b854c" />
+
 
 <sub>7z Archive support is planned using external 7zip</sub>
 
