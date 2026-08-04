@@ -55,30 +55,20 @@ while true; do
 
     case $choice in
         1)
-			command="report"
-			output="$input"
+			command_report
             break
             ;;
         2)
-            command="copy "
-			command_add_check
-			command+="report"
-			output="$output_copy"
-			backup_check
+			command_copy
             break
             ;;
         3)
-            command="move "
-			command_add_check
-			command+="report"
-			output="$output_move"
-			backup_check
-            break
+			command_move
             ;;
         B|b)
             "$previous_menu"
             ;;
-        M|m)
+        T|t)
             main_menu
             ;;
         Q|q)
@@ -125,7 +115,19 @@ while true; do
         5)
             atari_lynx_menu
             ;;
+        R|r)
+			command_type="command_report"
+            atari_command_all
+            ;;
+        C|c)
+			command_type="command_copy"
+            atari_command_all
+            ;;
         M|m)
+			command_type="command_move"
+            atari_command_all
+            ;;
+        T|t)
             main_menu
             ;;
         Q|q)
@@ -160,7 +162,19 @@ while true; do
         1)
             nec_tg16_menu
             ;;
+        R|r)
+			command_type="command_report"
+            nec_command_all
+            ;;
+        C|c)
+			command_type="command_copy"
+            enc_command_all
+            ;;
         M|m)
+			command_type="command_move"
+            nec_command_all
+            ;;
+        T|t)
             main_menu
             ;;
         Q|q)
@@ -219,7 +233,19 @@ while true; do
         9)
 			nintendo_vb_menu
             ;;
+        R|r)
+			command_type="command_report"
+            nintendo_command_all
+            ;;
+        C|c)
+			command_type="command_copy"
+            nintendo_command_all
+            ;;
         M|m)
+			command_type="command_move"
+            nintendo_command_all
+            ;;
+        T|t)
             main_menu
             ;;
         Q|q)
@@ -263,7 +289,19 @@ while true; do
         4)
             sega_ms_menu
             ;;
+        R|r)
+			command_type="command_report"
+            sega_command_all
+            ;;
+        C|c)
+			command_type="command_copy"
+            sega_command_all
+            ;;
         M|m)
+			command_type="command_move"
+            sega_command_all
+            ;;
+        T|t)
             main_menu
             ;;
         Q|q)
@@ -298,7 +336,19 @@ while true; do
         1)
             snk_ngpc_menu
             ;;
+        R|r)
+			command_type="command_report"
+            snk_command_all
+            ;;
+        C|c)
+			command_type="command_copy"
+            snk_command_all
+            ;;
         M|m)
+			command_type="command_move"
+            snk_command_all
+            ;;
+        T|t)
             main_menu
             ;;
         Q|q)

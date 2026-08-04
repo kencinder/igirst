@@ -5,6 +5,10 @@
 
 choose="Choose a Platform"
 
+command_all_menu_common="R: Generate Report for all Systems
+C: Copy Roms + Generate Report for all Systems
+M: Move Roms + Generate Report for all Systems"
+
 menu_top="			****************************************************
 			*                                                  *
 			*                 IGIR SHELL TOOLS                 *
@@ -21,11 +25,11 @@ menu_bottom="			*                                                  *
 
 command_menu_list="Choose a command (0-5):
 
-1: Generate Report Only
-2: Scan and Copy Roms + Generate Report
-3: Scan and Move Roms + Generate Report
+1: Generate Report
+2: Copy Roms + Generate Report
+3: Move Roms + Generate Report
 B: Previous Menu
-M: Main Menu
+T: Main Menu
 Q: Quit
 
 "
@@ -66,7 +70,8 @@ atari_menu_list="$choose(0-6):
 3: 7800
 4: Jaguar
 5: Lynx
-M: Main Menu
+$command_all_menu_common
+T: Main Menu
 Q: Quit
 
 "
@@ -118,7 +123,8 @@ $menu_bottom
 nec_menu_list="$choose(0-2):
 
 1: TurboGrafx 16\PC Engine
-M: Main Menu
+$command_all_menu_common
+T: Main Menu
 Q: Quit
 
 "
@@ -150,7 +156,8 @@ nintendo_menu_list="$choose(0-10):
 7: Nintendo Entertainment System
 8: Super Nintendo Entertainment System
 9: Virtual Boy
-M: Main Menu
+$command_all_menu_common
+T: Main Menu
 Q: Quit
 
 "
@@ -233,7 +240,8 @@ sega_menu_list="$choose(0-5):
 2: Game Gear
 3: Genesis\Mega Drive
 4: Master System
-M: Main Menu
+$command_all_menu_common
+T: Main Menu
 Q: Quit
 
 "
@@ -278,7 +286,8 @@ $menu_bottom
 snk_menu_list="$choose(0-2):
 
 1: Neo Geo Pocket Color
-M: Main Menu
+$command_all_menu_common
+T: Main Menu
 Q: Quit
 
 "

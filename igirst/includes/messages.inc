@@ -1,6 +1,7 @@
 #!/bin/bash
 
-backup_prompt=" *** WARNING! *** Clean is enabled but backups are not. Are you sure you want to continue?
+backup_prompt="
+ *** WARNING! *** Clean is enabled but backups are not. Are you sure you want to continue?
 "
 
 backup_continue="
@@ -12,11 +13,13 @@ continue="
 "
 
 empty_choice="
+
  No choice entered"
 
 var_missing="location not set in igirst.cfg"
 
 invalid_choice="
+
  Invalid option:"
 
 no_igir="
@@ -27,5 +30,6 @@ no_igir="
 "
 
 quit="
+
  Exiting IGIR Shell Tools...
 "
