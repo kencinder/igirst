@@ -53,5 +53,4 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
 
 ### <sub>Clean/Backup</sub>
 A safety check is done for `clean` that requires confirmation if `--clean-backup` isn't also present\
-Clean and backups are configured in `igirst.cfg` using the Additional IGIR Commands section\
-by adding `clean` with `--clean-backup` and optionally using the defined Backup Variables for clean section
+Clean & backups configured in `igirst.cfg` using Additional IGIR Commands by adding `clean` with `--clean-backup`
