@@ -14,9 +14,6 @@ create_dat_filename() {
 
 # Checks if `clean` is set without `--clean-backup` and warns
 backup_check() {
-	clear
-    printf '%s' "$current_menu_header $backup_prompt"
-
 	if [[ "$command_add" == *"clean"* ]]; then
     	if [[ "$command_add" != *"--clean-backup"* ]]; then
 			clear

@@ -76,6 +76,7 @@ while true; do
             ;;
         M|m)
 			command_move
+            break
             ;;
         B|b)
             "$previous_menu"
