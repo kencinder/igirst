@@ -314,6 +314,14 @@ command_all_common() {
 	$current_menu
 }
 
+command_all_main() {
+	atari_command_all
+	nec_command_all
+	nintendo_command_all
+	sega_command_all
+	snk_command_all
+}
+
 atari_command_all() {
 	atari_systems=(2600 5200 7800 jaguar lynx)
 	atari_cmd_vars=(_2600_ _5200_ _7800_ jaguar_ lynx_)

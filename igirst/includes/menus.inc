@@ -26,6 +26,18 @@ while true; do
         5)
             snk_menu
             ;;
+        R|r)
+			command_type="command_report"
+            command_all_main
+            ;;
+        C|c)
+			command_type="command_copy"
+            command_all_main
+            ;;
+        M|m)
+			command_type="command_move"
+            command_all_main
+            ;;
         Q|q)
             printf '%s' "$quit"
             sleep 1
@@ -54,15 +66,15 @@ while true; do
     fi
 
     case $choice in
-        1)
+        R)
 			command_report
             break
             ;;
-        2)
+        C)
 			command_copy
             break
             ;;
-        3)
+        M)
 			command_move
             ;;
         B|b)

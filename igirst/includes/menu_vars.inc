@@ -1,6 +1,6 @@
 #!/bin/bash
 
-			# Common menu variables
+			### Common menu variables ###
 
 
 choose="Choose a Platform"
@@ -17,20 +17,20 @@ menu_top="			****************************************************
 menu_bottom="			*                                                  *
 			****************************************************"
 
+menu_main_quit="T: Main Menu
+Q: Quit"
 
-			# Menu headers and lists
-
+			### Menu headers and lists ###
 
 	# Command Menu #
 
 command_menu_list="Choose a command (0-5):
 
-1: Generate Report
-2: Copy Roms + Generate Report
-3: Move Roms + Generate Report
+R: Generate Report
+C: Copy Roms + Generate Report
+M: Move Roms + Generate Report
 B: Previous Menu
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
 
@@ -50,6 +50,7 @@ main_menu_list="$choose or Manufacturer(0-5):
 3: Nintendo
 4: Sega
 5: SNK
+$command_all_menu_common
 Q: Quit
 
 "
@@ -71,10 +72,11 @@ atari_menu_list="$choose(0-6):
 4: Jaguar
 5: Lynx
 $command_all_menu_common
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
+
+	# Atari System Menus #
 
 atari_2600_menu_header="
 $menu_top
@@ -112,7 +114,6 @@ $menu_bottom
 "
 	# NEC Menu #
 
-
 nec_menu_header="
 $menu_top
 			*                      NEC                         *
@@ -124,10 +125,11 @@ nec_menu_list="$choose(0-2):
 
 1: TurboGrafx 16\PC Engine
 $command_all_menu_common
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
+
+	# NEC System Menus #
 
 nec_tg16_menu_header="
 $menu_top
@@ -157,10 +159,11 @@ nintendo_menu_list="$choose(0-10):
 8: Super Nintendo Entertainment System
 9: Virtual Boy
 $command_all_menu_common
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
+
+	# Nintendo System Menus #
 
 nintendo_3ds_menu_header="
 $menu_top
@@ -241,10 +244,11 @@ sega_menu_list="$choose(0-5):
 3: Genesis\Mega Drive
 4: Master System
 $command_all_menu_common
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
+
+	# SEGA System Menus #
 
 sega_32x_menu_header="
 $menu_top
@@ -287,10 +291,11 @@ snk_menu_list="$choose(0-2):
 
 1: Neo Geo Pocket Color
 $command_all_menu_common
-T: Main Menu
-Q: Quit
+$menu_main_quit
 
 "
+
+	# SNK System Menus #
 
 snk_ngpc_menu_header="
 $menu_top
