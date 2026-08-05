@@ -66,15 +66,15 @@ while true; do
     fi
 
     case $choice in
-        R)
+        R|r)
 			command_report
             break
             ;;
-        C)
+        C|c)
 			command_copy
             break
             ;;
-        M)
+        M|m)
 			command_move
             ;;
         B|b)
