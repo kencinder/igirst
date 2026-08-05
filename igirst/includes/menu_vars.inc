@@ -1,7 +1,6 @@
 #!/bin/bash
 
-			### Common menu variables ###
-
+#			### Common menu variables
 
 choose="Choose a Platform"
 
@@ -20,9 +19,9 @@ menu_bottom="			*                                                  *
 menu_main_quit="T: Main Menu
 Q: Quit"
 
-			### Menu headers and lists ###
+#			### Menu headers and lists
 
-	# Command Menu #
+#===# Command Menu #===#
 
 command_menu_list="Choose a command (0-5):
 
@@ -34,7 +33,7 @@ $menu_main_quit
 
 "
 
-	# Main Menu #
+#===# Main Menu #===#
 
 main_menu_header="
 $menu_top
@@ -55,7 +54,7 @@ Q: Quit
 
 "
 
-	# Atari Menu #
+#===# Atari Menu #===#
 
 atari_menu_header="
 $menu_top
@@ -76,7 +75,7 @@ $menu_main_quit
 
 "
 
-	# Atari System Menus #
+#===# Atari System Menus #===#
 
 atari_2600_menu_header="
 $menu_top
@@ -112,7 +111,7 @@ $menu_top
 $menu_bottom
             
 "
-	# NEC Menu #
+#===# NEC Menu #===#
 
 nec_menu_header="
 $menu_top
@@ -129,7 +128,7 @@ $menu_main_quit
 
 "
 
-	# NEC System Menus #
+#===# NEC System Menus #===#
 
 nec_tg16_menu_header="
 $menu_top
@@ -138,7 +137,7 @@ $menu_bottom
             
 "
 
-	# Nintendo Menu #
+#===# Nintendo Menu #===#
 
 nintendo_menu_header="
 $menu_top
@@ -163,7 +162,7 @@ $menu_main_quit
 
 "
 
-	# Nintendo System Menus #
+#===# Nintendo System Menus #===#
 
 nintendo_3ds_menu_header="
 $menu_top
@@ -228,7 +227,7 @@ $menu_bottom
             
 "
 
-	# SEGA Menu #
+#===# SEGA Menu #===#
 
 sega_menu_header="
 $menu_top
@@ -248,7 +247,7 @@ $menu_main_quit
 
 "
 
-	# SEGA System Menus #
+#===# SEGA System Menus #===#
 
 sega_32x_menu_header="
 $menu_top
@@ -278,7 +277,7 @@ $menu_bottom
             
 "
 
-	# SNK Menu #
+#===# SNK Menu #===#
 
 snk_menu_header="
 $menu_top
@@ -295,7 +294,7 @@ $menu_main_quit
 
 "
 
-	# SNK System Menus #
+#===# SNK System Menus #===#
 
 snk_ngpc_menu_header="
 $menu_top

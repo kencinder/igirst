@@ -1,15 +1,13 @@
 #!/bin/bash
 
 main_menu() {
-while true; do
-    clear
-    printf '%s' "$main_menu_header $main_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		printf '%s' "$main_menu_header $main_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         1)
             atari_menu
@@ -56,15 +54,13 @@ while true; do
 }
 
 command_menu() {
-while true; do
-    clear
-    printf '%s' "$current_menu_header $command_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		printf '%s' "$current_menu_header $command_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         R|r)
 			command_report
@@ -102,16 +98,14 @@ while true; do
 }
 
 atari_menu() {
-while true; do
-    clear
-	previous_menu="atari_menu"
-    printf '%s' "$atari_menu_header $atari_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+    	clear
+		previous_menu="atari_menu"
+		printf '%s' "$atari_menu_header $atari_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         1)
             atari_2600_menu
@@ -161,16 +155,14 @@ while true; do
 }
 
 nec_menu() {
-while true; do
-    clear
-	previous_menu="nec_menu"
-    printf '%s' "$nec_menu_header $nec_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		previous_menu="nec_menu"
+		printf '%s' "$nec_menu_header $nec_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         1)
             nec_tg16_menu
@@ -208,16 +200,14 @@ while true; do
 }
 
 nintendo_menu() {
-while true; do
-    clear
-	previous_menu="nintendo_menu"
-    printf '%s' "$nintendo_menu_header $nintendo_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		previous_menu="nintendo_menu"
+		printf '%s' "$nintendo_menu_header $nintendo_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         1)
             nintendo_3ds_menu
@@ -279,17 +269,15 @@ while true; do
 }
 
 sega_menu() {
-while true; do
-    clear
-	previous_menu="sega_menu"
-    printf '%s' "$sega_menu_header $sega_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		previous_menu="sega_menu"
+		printf '%s' "$sega_menu_header $sega_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
-    case $choice in
+	case $choice in
         1)
             sega_32x_menu
             ;;
@@ -335,16 +323,14 @@ while true; do
 }
 
 snk_menu() {
-while true; do
-    clear
-	previous_menu="snk_menu"
-    printf '%s' "$snk_menu_header $snk_menu_list"
-    read -rsn 1 -p "Select an option: " choice
-
+	while true; do
+		clear
+		previous_menu="snk_menu"
+		printf '%s' "$snk_menu_header $snk_menu_list"
+		read -rsn 1 -p "Select an option: " choice
     if [ -z "$choice" ]; then
         choice=""
     fi
-
     case $choice in
         1)
             snk_ngpc_menu
