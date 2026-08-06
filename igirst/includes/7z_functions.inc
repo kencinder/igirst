@@ -3,32 +3,59 @@
 if [ -z "$_7z_args" ]; then
     _7z_args="-t7z"
 fi
-
-shopt -s extglob
+shopt -s extglob nullglob
 7z_input_is_output() {
+	command_igir <<< 1 >/dev/null 2>&1
+	[[ -z "$backup_path" || -z "$input" || -z "$igirst_dir" ]] && return 1
+	# Check for 7z files
+	files=("$backup_path"/*.7z)
+	# If no 7z files exist then exit this function
+	if (( ${#files[@]} == 0 )); then
+		shopt -u extglob nullglob
+		return
+	fi
 	printf '%s' "$current_menu_header $_7z_process"
+	cd "$backup_path" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
+	for i in *.7z; do
+		[[ -f "$i" ]] || continue
+		7z x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
+	done
+	cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	command_igir <<< 1 >/dev/null 2>&1
-	cd "$backup_path" || return
-	for i in *.7z; do 7z x "$i" -aou -o"." >/dev/null 2>&1 && rm "$i"; done
-	cd - >/dev/null 2>&1 || return
-	command_igir <<< 1 >/dev/null 2>&1
-	cd "$input" || return
-	for i in *.!(7z|zip); do 7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm "$i"; done
-	shopt -u extglob
-	cd - >/dev/null 2>&1 || return
+	cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
+	for i in *.!(7z|zip); do
+		[[ -f "$i" ]] || continue
+		7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
+	done
+	shopt -u extglob nullglob
+	cd "$igirst_dir" >/dev/null 2>&1 || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 }
 
 7z_input_not_output() {
+	command_igir <<< 1 >/dev/null 2>&1
+	[[ -z "$input" || -z "$output" || -z "$igirst_dir" ]] && return 1
+	# Check for 7z files
+	files=("$input"/*.7z)
+	# If no 7z files exist then exit this function
+	if (( ${#files[@]} == 0 )); then
+		shopt -u extglob nullglob
+		return
+	fi
 	printf '%s' "$current_menu_header $_7z_process"
+	cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
+	for i in *.7z; do
+		[[ -f "$i" ]] || continue
+		7z x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
+	done
+	cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	command_igir <<< 1 >/dev/null 2>&1
-	cd "$input" || return
-	for i in *.7z; do 7z x "$i" -aou -o"." >/dev/null 2>&1 && rm "$i"; done
-	cd - >/dev/null 2>&1 || return
-	command_igir <<< 1 >/dev/null 2>&1
-	cd "$output" || return
-	for i in *.!(7z|zip); do 7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm "$i"; done
-	shopt -u extglob
-	cd - >/dev/null 2>&1 || return
+	cd "$output" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
+	for i in *.!(7z|zip); do
+		[[ -f "$i" ]] || continue
+		7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
+	done
+	shopt -u extglob nullglob
+	cd "$igirst_dir" >/dev/null 2>&1 || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 }
 
 7z_handler() {
@@ -36,16 +63,6 @@ shopt -s extglob
 	if command -v "7z" &> /dev/null; then
     	:
 	else
-		return
-	fi
-
-	# Check for 7z files
-	shopt -s nullglob
-	files=("$input"/*.7z)
-	shopt -u nullglob
-
-	# If no 7z files exist then exit this function
-	if (( ${#files[@]} == 0 )); then
 		return
 	fi
 

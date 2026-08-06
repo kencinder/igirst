@@ -1,5 +1,6 @@
 #!/bin/bash
 
+igirst_dir="$PWD"
 set -a
 source "igirst.cfg"
 source "includes/7z_functions.inc"
