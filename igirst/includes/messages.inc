@@ -1,5 +1,9 @@
 #!/bin/bash
 
+_7z_process="
+Processing 7z Files...
+"
+
 backup_prompt="
  *** WARNING! *** Clean is enabled but backups are not. Are you sure you want to continue?
 "

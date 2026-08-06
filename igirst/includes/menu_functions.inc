@@ -25,7 +25,7 @@ backup_check() {
 				else
 					$current_menu
 				fi
-				done
+			done
 		fi
 	fi
 }
@@ -68,6 +68,8 @@ command_set() {
 	create_dat_filename
 	command_menu
 	clear
+	7z_handler
+	clear
 	command_igir
 	$current_menu
 }
@@ -106,164 +108,6 @@ var_check() {
 }
 
 
-#			### System Specific Menus
-
-#===# Atari #===#
-
-	atari_2600_menu() {
-		clear
-		current_menu="atari_2600_menu"
-		current_menu_header="$atari_2600_menu_header"
-		system=("${cmd_vars[@]/#/\$_2600_}")
-		command_set
-	}
-	atari_5200_menu() {
-		clear
-		current_menu="atari_5200_menu"
-		current_menu_header="$atari_5200_menu_header"
-		system=("${cmd_vars[@]/#/\$_5200_}")
-		command_set
-	}
-	atari_7800_menu() {
-		clear
-		current_menu="atari_7800_menu"
-		current_menu_header="$atari_7800_menu_header"
-		system=("${cmd_vars[@]/#/\$_7800_}")
-		command_set
-	}
-	atari_jaguar_menu() {
-		clear
-		current_menu="atari_jaguar_menu"
-		current_menu_header="$atari_jaguar_menu_header"
-		system=("${cmd_vars[@]/#/\$jaguar_}")
-		command_set
-	}
-	atari_lynx_menu() {
-		clear
-		current_menu="atari_lynx_menu"
-		current_menu_header="$atari_lynx_menu_header"
-		system=("${cmd_vars[@]/#/\$lynx_}")
-		command_set
-	}
-
-#===# NEC #===#
-
-	nec_tg16_menu() {
-		clear
-		current_menu="nec_tg16_menu"
-		current_menu_header="$nec_tg16_menu_header"
-		system=("${cmd_vars[@]/#/\$tg16_}")
-		command_set
-	}
-
-#===# Nintendo #===#
-
-	nintendo_3ds_menu() {
-		clear
-		current_menu="nintendo_3ds_menu"
-		current_menu_header="$nintendo_3ds_menu_header"
-		system=("${cmd_vars[@]/#/\$_3ds_}")
-		command_set
-	}
-	nintendo_64_menu() {
-		clear
-		current_menu="nintendo_64_menu"
-		current_menu_header="$nintendo_64_menu_header"
-		system=("${cmd_vars[@]/#/\$_64_}")
-		command_set
-	}
-	nintendo_ds_menu() {
-		clear
-		current_menu="nintendo_ds_menu"
-		current_menu_header="$nintendo_ds_menu_header"
-		system=("${cmd_vars[@]/#/\$ds_}")
-		command_set
-	}
-	nintendo_gb_menu() {
-		clear
-		current_menu="nintendo_gb_menu"
-		current_menu_header="$nintendo_gb_menu_header"
-		system=("${cmd_vars[@]/#/\$gb_}")
-		command_set
-	}
-	nintendo_gba_menu() {
-		clear
-		current_menu="nintendo_gba_menu"
-		current_menu_header="$nintendo_gba_menu_header"
-		system=("${cmd_vars[@]/#/\$gba_}")
-		command_set
-	}
-	nintendo_gbc_menu() {
-		clear
-		current_menu="nintendo_gbc_menu"
-		current_menu_header="$nintendo_gbc_menu_header"
-		system=("${cmd_vars[@]/#/\$gbc_}")
-		command_set
-	}
-	nintendo_nes_menu() {
-		clear
-		current_menu="nintendo_nes_menu"
-		current_menu_header="$nintendo_nes_menu_header"
-		system=("${cmd_vars[@]/#/\$nes_}")
-		command_set
-	}
-	nintendo_snes_menu() {
-		clear
-		current_menu="nintendo_snes_menu"
-		current_menu_header="$nintendo_snes_menu_header"
-		system=("${cmd_vars[@]/#/\$snes_}")
-		command_set
-	}
-	nintendo_vb_menu() {
-		clear
-		current_menu="nintendo_vb_menu"
-		current_menu_header="$nintendo_vb_menu_header"
-		system=("${cmd_vars[@]/#/\$vb_}")
-		command_set
-	}
-			
-#===# SEGA #===#
-
-	sega_32x_menu() {
-		clear
-		current_menu="sega_32x_menu"
-		current_menu_header="$sega_32x_menu_header"
-		system=("${cmd_vars[@]/#/\$_32x_}")
-		command_set
-	}
-	sega_gg_menu() {
-		clear
-		current_menu="sega_gg_menu"
-		current_menu_header="$sega_gg_menu_header"
-		system=("${cmd_vars[@]/#/\$gg_}")
-		command_set
-	}
-	sega_gen_menu() {
-		clear
-		current_menu="sega_gen_menu"
-		current_menu_header="$sega_gen_menu_header"
-		system=("${cmd_vars[@]/#/\$gen_}")
-		command_set
-	}
-	sega_ms_menu() {
-		clear
-		current_menu="sega_ms_menu"
-		current_menu_header="$sega_ms_menu_header"
-		system=("${cmd_vars[@]/#/\$ms_}")
-		command_set
-	}
-
-#===# SNK #===#
-
-	snk_ngpc_menu() {
-		clear
-		current_menu="snk_ngpc_menu"
-		current_menu_header="$snk_ngpc_menu_header"
-		system=("${cmd_vars[@]/#/\$ngpc_}")
-		command_set
-	}
-
-
 #			### Manufacturer/Platform Functions to Process all Systems at once
 
 # Process all Systems for IGIR REPORT, COPY or MOVE commands
@@ -275,6 +119,8 @@ var_check() {
 		system_vars
 		create_dat_filename
 		$command_type
+		clear
+		7z_handler
 		clear
 		command_igir <<< 1
 		$current_menu

@@ -2,6 +2,7 @@
 
 set -a
 source "igirst.cfg"
+source "includes/7z_functions.inc"
 source "includes/menus.inc"
 source "includes/messages.inc"
 source "includes/menu_functions.inc"
