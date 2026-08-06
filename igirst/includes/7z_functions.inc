@@ -18,14 +18,14 @@ shopt -s extglob nullglob
 	cd "$backup_path" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	for i in *.7z; do
 		[[ -f "$i" ]] || continue
-		7z x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
+		"$_7z_command" x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
 	done
 	cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	command_igir <<< 1 >/dev/null 2>&1
 	cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	for i in *.!(7z|zip); do
 		[[ -f "$i" ]] || continue
-		7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
+		"$_7z_command" a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
 	done
 	shopt -u extglob nullglob
 	cd "$igirst_dir" >/dev/null 2>&1 || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
@@ -45,14 +45,14 @@ shopt -s extglob nullglob
 	cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	for i in *.7z; do
 		[[ -f "$i" ]] || continue
-		7z x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
+		"$_7z_command" x "$i" -aou -o"." >/dev/null 2>&1 && rm -- "$i"
 	done
 	cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	command_igir <<< 1 >/dev/null 2>&1
 	cd "$output" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 	for i in *.!(7z|zip); do
 		[[ -f "$i" ]] || continue
-		7z a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
+		"$_7z_command" a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
 	done
 	shopt -u extglob nullglob
 	cd "$igirst_dir" >/dev/null 2>&1 || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
@@ -60,12 +60,16 @@ shopt -s extglob nullglob
 
 7z_handler() {
 	# Check for 7z Command
-	if command -v "7z" &> /dev/null; then
-    	:
-	else
-		return
+	if [ -z "$_7z_command" ]; then
+		return 0
 	fi
-
+	if command -v "$_7z_command" &> /dev/null; then
+		:
+	elif [ -x "$_7z_command" ]; then
+		:
+	else
+		return 1
+	fi
 	# Check if command is only 'report' - No file handling done so skip
 	if [[ "$command" == "report" ]]; then
 		return
