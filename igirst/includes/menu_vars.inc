@@ -8,14 +8,6 @@ command_all_menu_common="R: Generate Report for all Systems
 C: Copy Roms + Generate Report for all Systems
 M: Move Roms + Generate Report for all Systems"
 
-menu_top="			****************************************************
-			*                                                  *
-			*                 IGIR SHELL TOOLS                 *
-			*                                                  *"
-
-menu_bottom="			*                                                  *
-			****************************************************"
-
 menu_main_quit="T: Main Menu
 Q: Quit"
 
@@ -35,28 +27,7 @@ sega_system_vars=("_32x_" "gg_" "gen_" "ms_")
 snk_system_vars=("ngpc_")
 sony_system_vars=("ps1_" "ps2_" "ps3_" "psp_")
 
-#			### Menu headers and lists
-
-#===# Command Menu #===#
-
-command_menu_list="$choose
-
-R: Generate Report
-C: Copy Roms + Generate Report
-M: Move Roms + Generate Report
-B: Previous Menu
-$menu_main_quit
-
-"
-
-#===# Main Menu #===#
-
-main_menu_header="
-$menu_top
-			*                    Main Menu                     *
-$menu_bottom
-
-"
+#			### Menu lists
 
 main_menu_list="$choose
 
@@ -71,12 +42,13 @@ Q: Quit
 
 "
 
-#===# Atari Menu #===#
+command_menu_list="$choose
 
-atari_menu_header="
-$menu_top
-			*                      Atari                       *
-$menu_bottom
+R: Generate Report
+C: Copy Roms + Generate Report
+M: Move Roms + Generate Report
+B: Previous Menu
+$menu_main_quit
 
 "
 
@@ -92,74 +64,11 @@ $menu_main_quit
 
 "
 
-#===# Atari System Menus #===#
-
-atari_2600_menu_header="
-$menu_top
-			*                   Atari - 2600                   *
-$menu_bottom
-            
-"
-
-atari_5200_menu_header="
-$menu_top
-			*                   Atari - 5200                   *
-$menu_bottom
-            
-"
-
-atari_7800_menu_header="
-$menu_top
-			*                   Atari - 7800                   *
-$menu_bottom
-            
-"
-
-atari_jaguar_menu_header="
-$menu_top
-			*                  Atari - Jaguar                  *
-$menu_bottom
-            
-"
-
-atari_lynx_menu_header="
-$menu_top
-			*                   Atari - Lynx                   *
-$menu_bottom
-            
-"
-#===# NEC Menu #===#
-
-nec_menu_header="
-$menu_top
-			*                      NEC                         *
-$menu_bottom
-
-"
-
 nec_menu_list="$choose
 
 1: TurboGrafx 16\PC Engine
 $command_all_menu_common
 $menu_main_quit
-
-"
-
-#===# NEC System Menus #===#
-
-nec_tg16_menu_header="
-$menu_top
-			*               NEC - TurboGrafx-16                *
-$menu_bottom
-            
-"
-
-#===# Nintendo Menu #===#
-
-nintendo_menu_header="
-$menu_top
-			*                    Nintendo                      *
-$menu_bottom
 
 "
 
@@ -179,80 +88,6 @@ $menu_main_quit
 
 "
 
-#===# Nintendo System Menus #===#
-
-nintendo_3ds_menu_header="
-$menu_top
-			*                  Nintendo - 3DS                  *
-$menu_bottom
-            
-"
-
-nintendo_64_menu_header="
-$menu_top
-			*                  Nintendo - 64                   *
-$menu_bottom
-            
-"
-
-nintendo_ds_menu_header="
-$menu_top
-			*                  Nintendo - DS                   *
-$menu_bottom
-            
-"
-
-nintendo_gb_menu_header="
-$menu_top
-			*                Nintendo - Game Boy               *
-$menu_bottom
-            
-"
-
-nintendo_gbc_menu_header="
-$menu_top
-			*             Nintendo - Game Boy Color            *
-$menu_bottom
-            
-"
-
-nintendo_gba_menu_header="
-$menu_top
-			*            Nintendo - Game Boy Advance           *
-$menu_bottom
-            
-"
-
-nintendo_nes_menu_header="
-$menu_top
-			*     Nintendo - Nintendo Entertainment System     *
-$menu_bottom
-            
-"
-
-nintendo_snes_menu_header="
-$menu_top
-			*  Nintendo - Super Nintendo Entertainment System  *
-$menu_bottom
-            
-"
-
-nintendo_vb_menu_header="
-$menu_top
-			*              Nintendo - Virtual Boy              *
-$menu_bottom
-            
-"
-
-#===# SEGA Menu #===#
-
-sega_menu_header="
-$menu_top
-			*                       SEGA                       *
-$menu_bottom
-
-"
-
 sega_menu_list="$choose
 
 1: 32X
@@ -264,68 +99,11 @@ $menu_main_quit
 
 "
 
-#===# SEGA System Menus #===#
-
-sega_32x_menu_header="
-$menu_top
-			*                    SEGA - 32X                    *
-$menu_bottom
-            
-"
-
-sega_gg_menu_header="
-$menu_top
-			*                 SEGA - Game Gear                 *
-$menu_bottom
-            
-"
-
-sega_gen_menu_header="
-$menu_top
-			*             SEGA - Genesis\Mega Drive            *
-$menu_bottom
-            
-"
-
-sega_ms_menu_header="
-$menu_top
-			*               SEGA - Master System               *
-$menu_bottom
-            
-"
-
-#===# SNK Menu #===#
-
-snk_menu_header="
-$menu_top
-			*                      SNK                         *
-$menu_bottom
-
-"
-
 snk_menu_list="$choose
 
 1: Neo Geo Pocket Color
 $command_all_menu_common
 $menu_main_quit
-
-"
-
-#===# SNK System Menus #===#
-
-snk_ngpc_menu_header="
-$menu_top
-			*            SNK - Neo Geo Pocket Color            *
-$menu_bottom
-            
-"
-
-#===# Sony Menu #===#
-
-sony_menu_header="
-$menu_top
-			*                       Sony                       *
-$menu_bottom
 
 "
 
@@ -338,34 +116,4 @@ sony_menu_list="$choose
 $command_all_menu_common
 $menu_main_quit
 
-"
-
-#===# Sony System Menus #===#
-
-sony_ps1_menu_header="
-$menu_top
-			*                Sony - PlayStation                *
-$menu_bottom
-            
-"
-
-sony_ps2_menu_header="
-$menu_top
-			*               Sony - PlayStation 2               *
-$menu_bottom
-            
-"
-
-sony_ps3_menu_header="
-$menu_top
-			*               Sony - PlayStation  3              *
-$menu_bottom
-            
-"
-
-sony_psp_menu_header="
-$menu_top
-			*            Sony - PlayStation Portable           *
-$menu_bottom
-            
 "

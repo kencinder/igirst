@@ -2,8 +2,8 @@
 
 main_menu() {
     while true; do
-        clear
-        printf '%s\n' "$main_menu_header $main_menu_list"
+        draw_header "Main Menu"
+        printf '%s\n' "$main_menu_list"
         read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
             [1-9])
@@ -33,14 +33,17 @@ platform_menu() {
     vars_ref="${platform_lower}_system_vars[@]"
     current_vars=("${!vars_ref}")
     while true; do
-        menu_header_choice
+        draw_header "$platform"
+		list_ref="${platform_lower}_menu_list"
+        printf '%s\n' "${!list_ref}" 
+		read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
             [0-9]*)
                 if [ "$choice" -ge 1 ] && [ "$choice" -le "$max_choice" ]; then
                     idx=$((choice - 1))
                     system_prefix="${current_vars[$idx]}"
                     previous_menu="platform_menu"
-                    system_menu "$platform_lower" "$system_prefix"
+                    system_menu "$platform_lower" "$system_prefix" "$idx"
 					continue
                 fi
                 ;;
@@ -57,6 +60,7 @@ system_menu() {
     clear
     platform_lower="${1}"
     system_prefix="${2}"
+	current_system_idx="${3}"
     clean_name="${system_prefix//_/}"
     current_menu_header="${platform_lower}_${clean_name}_menu_header"
     system=("${cmd_vars[@]/#/\$${system_prefix}}")
@@ -65,21 +69,27 @@ system_menu() {
 
 command_menu() {
     active_platform="${1:-$current_platform}"
+    platform_lower="${active_platform,,}"
+    
     while true; do
         clear
-        printf '%s' "${!current_menu_header} $command_menu_list"
+        disp_platform="${active_platform^}"
+        sys_array_ref="${platform_lower}_systems[$current_system_idx]"
+        disp_system="${!sys_array_ref}"
+        full_title="$disp_platform $disp_system"
+        draw_header "$full_title"
+        printf '%s' "$command_menu_list"
         read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
             r) command_type="command_report"; break ;;
             c) command_type="command_copy"; break ;;
             m) command_type="command_move"; break ;;
-            b) 
-                if [ "$previous_menu" = "platform_menu" ]; then
-                    "$previous_menu" "$active_platform"
-                else
-                    "$previous_menu"
-                fi
-                ;;
+            b) if [ "$previous_menu" = "platform_menu" ]; then 
+				   "$previous_menu" "$active_platform"
+			   else
+			   	   "$previous_menu"
+			   fi
+			   ;;
             t) main_menu ;;
             *) menu_quit_invalid "$choice" ;;
         esac

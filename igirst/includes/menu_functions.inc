@@ -85,15 +85,25 @@ command_igir() {
 	read -rsn 1 -p "$continue"
 }
 
-menu_header_choice() {
+draw_header() {
+    title="${1}"
+    line="****************************************************"
+    width=${#line}
+    inner_width=$((width - 4))
+    pad_left="            "
+    brand="IGIR SHELL TOOLS"
+    brand_pad=$(( (inner_width - ${#brand}) / 2 ))
+    brand_rem=$(( inner_width - brand_pad ))
+    title_pad=$(( (inner_width - ${#title}) / 2 ))
+    title_rem=$(( inner_width - title_pad ))
     clear
-    parent_menu="${FUNCNAME[1]}"
-    if [ "$parent_menu" = "platform_menu" ] && [ -n "$platform_lower" ]; then
-        eval "printf '%s\n' \"\$${platform_lower}_menu_header \$${platform_lower}_menu_list\""
-    else
-        eval "printf '%s\n' \"\$${parent_menu}_menu_header \$${parent_menu}_menu_list\""
-    fi
-    read -rsn 1 -p "$choose" choice
+    printf '%s%s\n' "$pad_left" "$line"
+    printf "%s* %-${inner_width}s *\n" "$pad_left" ""
+    printf "%s* %${brand_pad}s%-${brand_rem}s *\n" "$pad_left" "" "$brand"
+    printf "%s* %-${inner_width}s *\n" "$pad_left" ""
+    printf "%s* %${title_pad}s%-${title_rem}s *\n" "$pad_left" "" "$title"
+    printf "%s* %-${inner_width}s *\n" "$pad_left" ""
+    printf '%s%s\n\n' "$pad_left" "$line"
 }
 
 menu_quit_invalid() {
