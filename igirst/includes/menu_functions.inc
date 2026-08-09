@@ -15,17 +15,16 @@ create_dat_filename() {
 # Checks if `clean` is set without `--clean-backup` and warns
 backup_check() {
 	if [[ "$command_add" == *"clean"* ]]; then
-    	if [[ "$command_add" != *"--clean-backup"* ]]; then
+		if [[ "$command_add" != *"--clean-backup"* ]]; then
 			clear
-    		printf '%s' "$current_menu_header $backup_prompt"
-			while true; do
-				read -rsn 1 -p "$backup_continue" key
-				if [[ $key == "y" || $key == "Y" ]]; then
-					break
-				else
-					$current_menu
-				fi
-			done
+			printf '%s' "${!current_menu_header} $backup_prompt"
+			read -rsn 1 -p "$backup_continue" key
+			if [[ $key == "y" || $key == "Y" ]]; then
+				return 0
+			else
+				command_menu
+				return 1
+			fi
 		fi
 	fi
 }
@@ -47,6 +46,17 @@ command_copy() {
 	backup_check
 }
 
+command_menu_set() {
+	while true; do
+		command_menu
+		$command_type
+		clear
+		7z_handler
+		clear
+		command_igir
+	done
+}
+
 command_move() {
 	command="move "
 	command_add_check
@@ -63,15 +73,9 @@ command_report() {
 # Sets up system specifics for the command menu and Final IGIR Command
 command_set() {
 	system_vars
-	printf '%s' "$current_menu_header"
 	var_check
 	create_dat_filename
-	command_menu
-	clear
-	7z_handler
-	clear
-	command_igir
-	$current_menu
+	command_menu_set
 }
 
 # Final IGIR command
@@ -79,6 +83,25 @@ command_igir() {
 	./"$igir_binary" $command --dat "${dat}" --input "$input" --output "$output" $options -X "$exclude" --report-output "$report"
 	printf "\n"
 	read -rsn 1 -p "$continue"
+}
+
+menu_header_choice() {
+    clear
+    parent_menu="${FUNCNAME[1]}"
+    if [ "$parent_menu" = "platform_menu" ] && [ -n "$platform_lower" ]; then
+        eval "printf '%s\n' \"\$${platform_lower}_menu_header \$${platform_lower}_menu_list\""
+    else
+        eval "printf '%s\n' \"\$${parent_menu}_menu_header \$${parent_menu}_menu_list\""
+    fi
+    read -rsn 1 -p "$choose" choice
+}
+
+menu_quit_invalid() {
+    case "$1" in
+		q)     printf '%s' "$quit"; sleep 1; clear && exit ;;
+		"")    printf '%s' "$empty_choice"; sleep 1 ;;
+		*)     printf '%s' "$invalid_choice $choice"; sleep 1 ;;
+    esac
 }
 
 # Sets the variables used in Final IGIR Command to system specific ones
@@ -110,10 +133,10 @@ var_check() {
 
 #			### Manufacturer/Platform Functions to Process all Systems at once
 
-# Process all Systems for IGIR REPORT, COPY or MOVE commands
-# Iterates through all system variables instead of using each systems menu function, cuts out printing menu headers and commmand menu
-# Mandatory variable checks are skipped, any system with an unset variable will silently fail without issue
-# Skips past Continue normally shown after Final IGIR Command completes and returns to Atari Menu when finished
+	# Process all Systems for IGIR REPORT, COPY or MOVE commands
+	# Iterates through all system variables instead of using each systems menu function, cuts out printing menu headers and commmand menu
+	# Mandatory variable checks are skipped, any system with an unset variable will silently fail without issue
+	# Skips past Continue normally shown after Final IGIR Command completes and returns to Atari Menu when finished
 
 	command_all_common() {
 		system_vars
@@ -123,57 +146,25 @@ var_check() {
 		7z_handler
 		clear
 		command_igir <<< 1
-		$current_menu
 	}
-	command_all_main() {
-		atari_command_all
-		nec_command_all
-		nintendo_command_all
-		sega_command_all
-		snk_command_all
+
+	main_command_all() {
+    for platform in "${platforms[@]}"; do
+        platform_lower="${platform,,}"
+        system_command_all "$platform_lower"
+    done
 	}
-	atari_command_all() {
-		atari_systems=(2600 5200 7800 jaguar lynx)
-		atari_cmd_vars=(_2600_ _5200_ _7800_ jaguar_ lynx_)
-		for i in "${!atari_systems[@]}"; do
-			cmd_var="${atari_systems[i]}"
-			system=("${cmd_vars[@]/#/\$${atari_cmd_vars[i]}}")
-			command_all_common
-		done
-	}
-	nec_command_all() {
-		nec_systems=(TG16)
-		nec_cmd_vars=(tg16_)
-		for i in "${!nec_systems[@]}"; do
-			cmd_var="${nec_systems[i]}"
-			system=("${cmd_vars[@]/#/\$${nec_cmd_vars[i]}}")
-			command_all_common
-		done
-	}
-	nintendo_command_all() {
-		nintendo_systems=(3DS 64 DS GB GBA GBC NES SNES VB)
-		nintendo_cmd_vars=(_3ds_ _64_ ds_ gb_ gba_ gbc_ nes_ snes_ vb_)
-		for i in "${!nintendo_systems[@]}"; do
-			cmd_var="${nintendo_systems[i]}"
-			system=("${cmd_vars[@]/#/\$${nintendo_cmd_vars[i]}}")
-			command_all_common
-		done
-	}
-	sega_command_all() {
-		sega_systems=(32X GG GEN MS)
-		sega_cmd_vars=(_32x_ gg_ gen_ ms_)
-		for i in "${!sega_systems[@]}"; do
-			cmd_var="${sega_systems[i]}"
-			system=("${cmd_vars[@]/#/\$${sega_cmd_vars[i]}}")
-			command_all_common
-		done
-	}
-	snk_command_all() {
-		snk_systems=(NGPC)
-		snk_cmd_vars=(ngpc_)
-		for i in "${!snk_systems[@]}"; do
-			cmd_var="${snk_systems[i]}"
-			system=("${cmd_vars[@]/#/\$${snk_cmd_vars[i]}}")
-			command_all_common
-		done
-	}
+
+	system_command_all() {
+    platform_lower="${1}"
+    systems_ref="${platform_lower}_systems[@]"
+    current_systems=("${!systems_ref}")
+	vars_ref="${platform_lower}_system_vars[@]"
+    current_vars=("${!vars_ref}")
+    for i in "${!current_systems[@]}"; do
+        cmd_var="${current_systems[i]}"
+        system_prefix="${current_vars[i]}"
+        system=("${cmd_vars[@]/#/\$${system_prefix}}")
+        command_all_common
+    done
+	}	

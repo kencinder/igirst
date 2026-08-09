@@ -12,7 +12,7 @@ shopt -s extglob nullglob
 	# If no 7z files exist then exit this function
 	if (( ${#files[@]} == 0 )); then
 		shopt -u extglob nullglob
-		return
+		return 1
 	fi
 	printf '%s' "$current_menu_header $_7z_process"
 	cd "$backup_path" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
@@ -39,7 +39,7 @@ shopt -s extglob nullglob
 	# If no 7z files exist then exit this function
 	if (( ${#files[@]} == 0 )); then
 		shopt -u extglob nullglob
-		return
+		return 1
 	fi
 	printf '%s' "$current_menu_header $_7z_process"
 	cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
@@ -61,7 +61,7 @@ shopt -s extglob nullglob
 7z_handler() {
 	# Check for 7z Command
 	if [ -z "$_7z_command" ]; then
-		return 0
+		return 1
 	fi
 	if command -v "$_7z_command" &> /dev/null; then
 		:
@@ -72,10 +72,10 @@ shopt -s extglob nullglob
 	fi
 	# Check if command is only 'report' - No file handling done so skip
 	if [[ "$command" == "report" ]]; then
-		return
+		return 1
 	# Check if command is copy - Unmatched files would need compared between different input and output dirs to work so skip
 	elif [[ "$command" == *"copy"* ]]; then
-		return
+		return 1
 	# Check if command is move
 	elif [[ "$command" == *"move"* ]]; then
 		# Check if 'clean --clean-backup' is set - Works if input == | != output
@@ -86,20 +86,20 @@ shopt -s extglob nullglob
 				# 'clean --clean-backup' present & input == output - Use 7z function for input == output
 				if [[ "$input" == "$output" ]]; then
 					7z_input_is_output
-					return
+					return 0
 				else
 				# 'clean --clean-backup' present & input != output - Use 7z function for input != output
 					7z_input_not_output
-					return
+					return 0
 				fi
 		else
 			# No 'clean --clean-backup' & input == output - No 7z possible(Unused requires parsing report and comparing files)
 			if [[ "$input" == "$output" ]]; then
-				return
+				return 1
 			else
 			# No 'clean --clean-backup' & input != output - Use 7z function for input != output
 				7z_input_not_output
-				return
+				return 0
 			fi
 		fi
 	fi

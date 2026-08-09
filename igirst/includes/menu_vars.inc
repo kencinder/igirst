@@ -2,7 +2,7 @@
 
 #			### Common menu variables
 
-choose="Choose a Platform"
+choose="Choose an option:"
 
 command_all_menu_common="R: Generate Report for all Systems
 C: Copy Roms + Generate Report for all Systems
@@ -19,11 +19,27 @@ menu_bottom="			*                                                  *
 menu_main_quit="T: Main Menu
 Q: Quit"
 
+platforms=("Atari" "NEC" "Nintendo" "Sega" "SNK" "Sony")
+
+atari_systems=("2600" "5200" "7800" "Jaguar" "Lynx")
+nec_systems=("Turbografx-16")
+nintendo_systems=("3DS" "64" "DS" "Game Boy" "Game Boy Advance" "Game Boy Color" "Nintendo Entertainment System" "Super Nintendo Entertainment System" "Virtual Boy")
+sega_systems=("32X" "Game Gear" "Genesis\Mega Drive" "Master System")
+snk_systems=("Neo Geo Pocket Color")
+sony_systems=("PlayStation" "PlayStation 2" "PlayStation 3" "PlayStation Portable")
+
+atari_system_vars=("_2600_" "_5200_" "_7800_" "jaguar_" "lynx_")
+nec_system_vars=("tg16_")
+nintendo_system_vars=("_3ds_" "_64_" "ds_" "gb_" "gba_" "gbc_" "nes_" "snes_" "vb_")
+sega_system_vars=("_32x_" "gg_" "gen_" "ms_")
+snk_system_vars=("ngpc_")
+sony_system_vars=("ps1_" "ps2_" "ps3_" "psp_")
+
 #			### Menu headers and lists
 
 #===# Command Menu #===#
 
-command_menu_list="Choose a command (0-5):
+command_menu_list="$choose
 
 R: Generate Report
 C: Copy Roms + Generate Report
@@ -42,13 +58,14 @@ $menu_bottom
 
 "
 
-main_menu_list="$choose or Manufacturer(0-5):
+main_menu_list="$choose
 
 1: Atari
 2: NEC
 3: Nintendo
 4: Sega
 5: SNK
+6: Sony
 $command_all_menu_common
 Q: Quit
 
@@ -63,7 +80,7 @@ $menu_bottom
 
 "
 
-atari_menu_list="$choose(0-6):
+atari_menu_list="$choose
 
 1: 2600
 2: 5200
@@ -120,7 +137,7 @@ $menu_bottom
 
 "
 
-nec_menu_list="$choose(0-2):
+nec_menu_list="$choose
 
 1: TurboGrafx 16\PC Engine
 $command_all_menu_common
@@ -146,7 +163,7 @@ $menu_bottom
 
 "
 
-nintendo_menu_list="$choose(0-10):
+nintendo_menu_list="$choose
 
 1: 3DS
 2: 64
@@ -236,7 +253,7 @@ $menu_bottom
 
 "
 
-sega_menu_list="$choose(0-5):
+sega_menu_list="$choose
 
 1: 32X
 2: Game Gear
@@ -286,7 +303,7 @@ $menu_bottom
 
 "
 
-snk_menu_list="$choose(0-2):
+snk_menu_list="$choose
 
 1: Neo Geo Pocket Color
 $command_all_menu_common
@@ -299,6 +316,56 @@ $menu_main_quit
 snk_ngpc_menu_header="
 $menu_top
 			*            SNK - Neo Geo Pocket Color            *
+$menu_bottom
+            
+"
+
+#===# Sony Menu #===#
+
+sony_menu_header="
+$menu_top
+			*                       Sony                       *
+$menu_bottom
+
+"
+
+sony_menu_list="$choose
+
+1: PlayStation
+2: PlayStation 2
+3: PlayStation 3
+4: PlayStation Portable
+$command_all_menu_common
+$menu_main_quit
+
+"
+
+#===# Sony System Menus #===#
+
+sony_ps1_menu_header="
+$menu_top
+			*                Sony - PlayStation                *
+$menu_bottom
+            
+"
+
+sony_ps2_menu_header="
+$menu_top
+			*               Sony - PlayStation 2               *
+$menu_bottom
+            
+"
+
+sony_ps3_menu_header="
+$menu_top
+			*               Sony - PlayStation  3              *
+$menu_bottom
+            
+"
+
+sony_psp_menu_header="
+$menu_top
+			*            Sony - PlayStation Portable           *
 $menu_bottom
             
 "
