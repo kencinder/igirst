@@ -27,31 +27,26 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
 ### Systems currently with Menu Support
 
 <table>
-        <tr><th>System</th><th>Status</th></tr>
-        <tr><td>Atari - 2600</td><td>:white_check_mark:</td></tr>
-        <tr><td>Atari - 5200</td><td>:white_check_mark:</td></tr>
-        <tr><td>Atari - 7800</td><td>:white_check_mark:</td></tr>
-        <tr><td>Atari - Jaguar</td><td>:white_check_mark:</td></tr>
-        <tr><td>Atari - Lynx</td><td>:white_check_mark:</td></tr>
-        <tr><td>NEC - PC Engine\TurboGrafx-16</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - 3DS</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - 64</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - DS</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - Game Boy</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - Game Boy Advance</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - Game Boy Color</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - NES</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - SNES</td><td>:white_check_mark:</td></tr>
-        <tr><td>Nintendo - Virtual Boy</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sega - 32X</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sega - Game Gear</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sega - Genesis\Mega Drive</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sega - Master System</td><td>:white_check_mark:</td></tr>
-        <tr><td>SNK - Neo Geo Pocket Color</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sony - PlayStation</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sony - PlayStation 2</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sony - PlayStation 3</td><td>:white_check_mark:</td></tr>
-        <tr><td>Sony - PlayStation Portable</td><td>:white_check_mark:</td></tr>
+  <thead>
+    <tr><th>System</th><th>Status</th><th>System</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Atari - 2600</td><td>&emsp; :white_check_mark:</td><td>Sega - 32X</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - 5200</td><td>&emsp; :white_check_mark:</td><td>Sega - Game Gear</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - 7800</td><td>&emsp; :white_check_mark:</td><td>Sega - Genesis\Mega Drive</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - Jaguar</td><td>&emsp; :white_check_mark:</td><td>Sega - Master System</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - Lynx</td><td>&emsp; :white_check_mark:</td><td>SNK - Neo Geo Pocket Color</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>NEC - PC Engine\TurboGrafx-16</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - 3DS</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 2</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - 64</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 3</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - DS</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation Portable</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - Game Boy</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Nintendo - Game Boy Advance</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Nintendo - Game Boy Color</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Nintendo - NES</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Nintendo - SNES</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Nintendo - Virtual Boy</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+  </tbody>
 </table>
 
 ### <sub>Clean/Backup</sub>
