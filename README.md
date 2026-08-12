@@ -48,6 +48,10 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
         <tr><td>Sega - Genesis\Mega Drive</td><td>:white_check_mark:</td></tr>
         <tr><td>Sega - Master System</td><td>:white_check_mark:</td></tr>
         <tr><td>SNK - Neo Geo Pocket Color</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sony - PlayStation</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sony - PlayStation 2</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sony - PlayStation 3</td><td>:white_check_mark:</td></tr>
+        <tr><td>Sony - PlayStation Portable</td><td>:white_check_mark:</td></tr>
 </table>
 
 ### <sub>Clean/Backup</sub>
