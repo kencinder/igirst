@@ -25,11 +25,11 @@ platform_menu() {
     platform="${1}"
     platform_lower="${platform,,}"
     current_platform="$platform"
-systems_ref="${platform_lower}_systems"
+systems_ref="${platform_lower}_systems[@]"
 current_systems=("${!systems_ref}")
-    max_choice="${#current_systems[@]}"
-vars_ref="${platform_lower}_system_vars"
+vars_ref="${platform_lower}_system_vars[@]"
 current_vars=("${!vars_ref}")
+max_choice="${#current_systems[@]}"
     while true; do
         draw_header "$platform"
         current_systems_arr_name="${platform_lower}_systems"
