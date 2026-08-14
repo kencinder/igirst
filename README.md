@@ -7,7 +7,7 @@
 A Linux shell script to make using [IGIR](https://github.com/emmercm/igir) easier
 
 Menu driven selection of Platform and Systems, using the IGIR COPY or MOVE command with REPORT\
-Individual Systems can be selected, or commands can be run for an entire Manufacturer/Platform, or ALL Platforms and Systems
+Individual Systems, entire Manufacturer/Platform, or ALL Platforms and Systems can be run at once
 
 7z Archive support using external 7z - See config for details
 
