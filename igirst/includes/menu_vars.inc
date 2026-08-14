@@ -31,18 +31,20 @@ var_missing="location not set in igirst.cfg"
 
 cmd_vars=(command_add dat input output_copy output_move options exclude report)
 
-platforms=("Atari" "NEC" "Nintendo" "Sega" "SNK" "Sony")
+platforms=("Atari" "NEC" "Nintendo" "Microsft" "Sega" "SNK" "Sony")
 
-atari_systems=("2600" "5200" "7800" "Jaguar" "Lynx")
-nec_systems=("Turbografx-16")
+atari_systems=("2600" "5200" "7800" "Jaguar" "Lynx" "ST")
+nec_systems=("Turbografx-16\PC Engine" "TurboGrafx CD\PC Engine CD")
 nintendo_systems=("3DS" "64" "DS" "Game Boy" "Game Boy Advance" "Game Boy Color" "Nintendo Entertainment System" "Super Nintendo Entertainment System" "Virtual Boy")
-sega_systems=("32X" "Game Gear" "Genesis\Mega Drive" "Master System")
+microsoft_systems=("Xbox" "Xbox 360")
+sega_systems=("32X" "Dreamcast" "Game Gear" "Genesis\Mega Drive" "Master System" "Saturn" "Sega CD\Mega CD")
 snk_systems=("Neo Geo Pocket Color")
 sony_systems=("PlayStation" "PlayStation 2" "PlayStation 3" "PlayStation Portable")
 
-atari_system_vars=("atari_2600" "atari_5200" "atari_7800" "atari_jaguar" "atari_lynx")
-nec_system_vars=("nec_tg16")
+atari_system_vars=("atari_2600" "atari_5200" "atari_7800" "atari_jaguar" "atari_lynx" "atari_st")
+nec_system_vars=("nec_tg16" "nec_tg16cd")
 nintendo_system_vars=("nintendo_3ds" "nintendo_64" "nintendo_ds" "nintendo_gb" "nintendo_gba" "nintendo_gbc" "nintendo_nes" "nintendo_snes" "nintendo_vb")
-sega_system_vars=("sega_32x" "sega_gg" "sega_gen" "sega_ms")
+microsoft_system_vars=("microsoft_xbox" "microsoft_360")
+sega_system_vars=("sega_32x" "sega_dc" "sega_gg" "sega_gen" "sega_ms" "sega_sat" "sega_scd")
 snk_system_vars=("snk_ngpc")
 sony_system_vars=("sony_ps1" "sony_ps2" "sony_ps3" "sony_psp")
