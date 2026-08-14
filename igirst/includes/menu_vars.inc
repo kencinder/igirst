@@ -31,7 +31,7 @@ var_missing="location not set in igirst.cfg"
 
 cmd_vars=(command_add dat input output_copy output_move options exclude report)
 
-platforms=("Atari" "NEC" "Nintendo" "Microsft" "Sega" "SNK" "Sony")
+platforms=("Atari" "NEC" "Nintendo" "Microsoft" "Sega" "SNK" "Sony")
 
 atari_systems=("2600" "5200" "7800" "Jaguar" "Lynx" "ST")
 nec_systems=("Turbografx-16\PC Engine" "TurboGrafx CD\PC Engine CD")
