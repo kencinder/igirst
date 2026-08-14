@@ -31,21 +31,23 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
     <tr><th>System</th><th>Status</th><th>System</th><th>Status</th></tr>
   </thead>
   <tbody>
-    <tr><td>Atari - 2600</td><td>&emsp; :white_check_mark:</td><td>Sega - 32X</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Atari - 5200</td><td>&emsp; :white_check_mark:</td><td>Sega - Game Gear</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Atari - 7800</td><td>&emsp; :white_check_mark:</td><td>Sega - Genesis\Mega Drive</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Atari - Jaguar</td><td>&emsp; :white_check_mark:</td><td>Sega - Master System</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Atari - Lynx</td><td>&emsp; :white_check_mark:</td><td>SNK - Neo Geo Pocket Color</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>NEC - PC Engine\TurboGrafx-16</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Nintendo - 3DS</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 2</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Nintendo - 64</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 3</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Nintendo - DS</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation Portable</td><td>&emsp; :white_check_mark:</td></tr>
-    <tr><td>Nintendo - Game Boy</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
-    <tr><td>Nintendo - Game Boy Advance</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
-    <tr><td>Nintendo - Game Boy Color</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
-    <tr><td>Nintendo - NES</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
-    <tr><td>Nintendo - SNES</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
-    <tr><td>Nintendo - Virtual Boy</td><td>&emsp; :white_check_mark:</td><td></td><td></td></tr>
+    <tr><td>Atari - 2600</td><td>&emsp; :white_check_mark:</td><td>Microsoft - Xbox</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - 5200</td><td>&emsp; :white_check_mark:</td><td>Microsoft - Xbox 360</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - 7800</td><td>&emsp; :white_check_mark:</td><td>Sega - 32X</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - Jaguar</td><td>&emsp; :white_check_mark:</td><td>Sega - Game Gear</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - Lynx</td><td>&emsp; :white_check_mark:</td><td>Sega - Genesis\Mega Drive</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Atari - ST</td><td>&emsp; :white_check_mark:</td><td>Sega - Master System</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>NEC - PC Engine\TurboGrafx-16</td><td>&emsp; :white_check_mark:</td><td>Sega - Saturn</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>NEC TurboGrafx CD\PC Engine CD</td><td>&emsp; :white_check_mark:</td><td>Sega - Sega CD\Mega CD</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - 3DS</td><td>&emsp; :white_check_mark:</td><td>SNK - Neo Geo Pocket Color</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - 64</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - DS</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 2</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - Game Boy</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation 3</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - Game Boy Advance</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation Portable</td><td>&emsp; :white_check_mark:</td></tr>
+    <tr><td>Nintendo - Game Boy Color</td><td>&emsp; :white_check_mark:</td><td><td></td></td></tr>
+    <tr><td>Nintendo - NES</td><td>&emsp; :white_check_mark:</td><td><td></td></td></tr>
+    <tr><td>Nintendo - SNES</td><td>&emsp; :white_check_mark:</td><td><td></td></td></tr>
+    <tr><td>Nintendo - Virtual Boy</td><td>&emsp; :white_check_mark:</td><td><td></td></td></tr>
   </tbody>
 </table>
 
