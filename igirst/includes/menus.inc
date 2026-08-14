@@ -3,7 +3,11 @@
 main_menu() {
     while true; do
         draw_header "Main Menu"
-        generate_menu_list platforms "$command_all_menu_common\nQ: Quit"
+        local display_platforms=()
+        for platform in "${platforms[@]}"; do
+            display_platforms+=("${platform//_/ }")
+        done
+        generate_menu_list display_platforms "$command_all_menu_common\nQ: Quit"
         read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
             [1-9])
