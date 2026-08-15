@@ -7,7 +7,7 @@ main_menu() {
         for platform in "${platforms[@]}"; do
             display_platforms+=("${platform//_/ }")
         done
-        generate_menu_list display_platforms "$command_all_menu_common\nQ: Quit"
+        generate_menu_list display_platforms "$command_all_menu_common\nX: Reload Config\nQ: Quit"
         read -rsn 1 -p "$choose" choice
 			case "${choice,,}" in
             [1-9])
@@ -22,6 +22,9 @@ main_menu() {
             r) main_command_all "command_report" ;;
             c) main_command_all "command_copy" ;;
             m) main_command_all "command_move" ;;
+			x) printf "\n\nReloading IGIR Shell Tools Config\n" && sleep 1
+            	exec env -i TERM="$TERM" "$BASH" "$igirst_dir/igirst.sh"
+                ;;
             *) menu_quit_invalid "$choice" ;;
         esac
     done
