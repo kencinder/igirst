@@ -9,12 +9,14 @@ main_menu() {
         done
         generate_menu_list display_platforms "$command_all_menu_common\nQ: Quit"
         read -rsn 1 -p "$choose" choice
-        case "${choice,,}" in
+			case "${choice,,}" in
             [1-9])
                 if [ "$choice" -le "${#platforms[@]}" ]; then
                     selected_platform="${platforms[$((choice - 1))]}"
                     platform_menu "$selected_platform"
-                    continue
+                    if [ $? -eq 5 ]; then
+                        system_menu "${selected_platform,,}"
+                    fi
                 fi
                 ;;
             r) main_command_all "command_report" ;;
@@ -35,20 +37,21 @@ vars_ref="${platform_lower}_system_vars[@]"
 current_vars=("${!vars_ref}")
 max_choice="${#current_systems[@]}"
     while true; do
+		if [ "$menu_target" = "main" ]; then
+            return 10
+        fi
         draw_header "$platform"
         current_systems_arr_name="${platform_lower}_systems"
         generate_menu_list "$current_systems_arr_name" "$command_all_menu_common\n$menu_main_quit"
         read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
-            [0-9]*)
+			[0-9]*)
                 if [ "$choice" -ge 1 ] && [ "$choice" -le "$max_choice" ]; then
                     idx=$((choice - 1))
                     system_prefix="${current_vars[$idx]}"
                     current_system_idx="$idx"
                     previous_menu="platform_menu"
-                    system_menu "$platform_lower"
-                    [ $? -eq 10 ] && return
-                    continue
+                    return 5 
                 fi
                 ;;
             r) system_command_all "$platform_lower" "command_report" ;;
@@ -63,9 +66,6 @@ max_choice="${#current_systems[@]}"
 system_menu() {
     clear
     local platform_lower="${1}"
-    local short_prefix="${system_prefix#${platform_lower}_}"
-    local header_var="${platform_lower}_${short_prefix}menu_header"
-    current_menu_header="${!header_var}"
     command_menu_set
     return $?
 }
@@ -94,7 +94,7 @@ command_menu() {
                else
                    "$previous_menu"
                fi ;;
-            t) exec "$0" ;;
+            t) export menu_target="main" && return 10 ;;
             *) menu_quit_invalid "$choice" ;;
         esac
     done

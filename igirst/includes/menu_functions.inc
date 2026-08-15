@@ -110,6 +110,9 @@ command_menu_set() {
     var_check || return 1 
     create_dat_filename
     while true; do
+		if [ "$menu_target" = "main" ]; then
+        return 10
+    	fi
         command_menu
         clear
         7z_handler
@@ -119,6 +122,9 @@ command_menu_set() {
 }
 
 command_igir() {
+	if [ "$menu_target" = "main" ]; then
+        return 10
+    fi
     local var_dat="${system_prefix}_dat"
     local var_input="${system_prefix}_input"
     local var_options="${system_prefix}_options"
