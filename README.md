@@ -6,12 +6,12 @@
 
 A Linux shell script to make using [IGIR](https://github.com/emmercm/igir) easier
 
-Menu driven selection of Platform and Systems, using the IGIR COPY or MOVE command with REPORT\
-Individual Systems, entire Manufacturer/Platform, or ALL Platforms and Systems can be run at once
+Menu driven selection of Platform and Systems, using the COPY or MOVE commands with REPORT\
+Individual Systems, Manufacturer/Platform, or ALL Platforms and Systems can be run at once
 
-7z Archive support using external 7z - See config for details
+7z Archive support using external 7z - See [wiki](https://github.com/kencinder/igirst/wiki/Config#7z-support) for details
 
-All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set in [the config](https://github.com/kencinder/igirst/blob/master/igirst/igirst.cfg) per system
+All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set in [the config](https://github.com/kencinder/igirst/wiki/Config#config-igirstcfg) per system
 
 <img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/c773e072-37c3-4900-a86a-8c0e849c91d6" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/30a30b2a-8fe9-40de-a1e8-d954771ee9fb" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/548afffa-f049-465c-b19c-6fa5900b854c" />
 
@@ -20,9 +20,7 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
 
 <br>
 
-> Configuration for everything is in `igirst.cfg`
-> 
-> Defaults are set for everything mandatory except your ROM input path
+> All Configuration is handled in `igirst.cfg`
 
 ### Systems currently with Menu Support
 
@@ -50,7 +48,3 @@ All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set
     <tr><td>Nintendo - SNES</td><td>&emsp; :white_check_mark:</td><td>Sony - PlayStation Portable</td><td>&emsp; :white_check_mark:</td></tr>
   </tbody>
 </table>
-
-### <sub>Clean/Backup</sub>
-A safety check is done for `clean` that requires confirmation if `--clean-backup` isn't also present\
-Clean & backups configured in `igirst.cfg` using Additional IGIR Commands by adding `clean` with `--clean-backup`
