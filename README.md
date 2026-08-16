@@ -4,14 +4,14 @@
         <tr><td><a href="https://github.com/kencinder/igirst#systems-currently-with-menu-support">Supported Systems</a></td><td><a href="https://github.com/kencinder/igirst/archive/refs/heads/master.zip">Download</a></td><td><a href="https://github.com/kencinder/igirst/wiki">Wiki</a></td></tr>
 </table>
 
-A Linux shell script to make using [IGIR](https://github.com/emmercm/igir) easier
+A Linux shell script to make using [IGIR](https://igir.io/) easier
 
 Menu driven selection of Platform and Systems, using the COPY or MOVE commands with REPORT\
 Individual Systems, Manufacturer/Platform, or ALL Platforms and Systems can be run at once
 
 7z Archive support using external 7z - See [wiki](https://github.com/kencinder/igirst/wiki/Config#7z-support) for details
 
-All of [IGIR](https://github.com/emmercm/igir)'s commands and options can be set in [the config](https://github.com/kencinder/igirst/wiki/Config#config-igirstcfg) per system
+All of IGIR's commands and options can be set in [the config](https://github.com/kencinder/igirst/wiki/Config#config-igirstcfg) per system
 
 <img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/c773e072-37c3-4900-a86a-8c0e849c91d6" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/30a30b2a-8fe9-40de-a1e8-d954771ee9fb" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/548afffa-f049-465c-b19c-6fa5900b854c" />
 
