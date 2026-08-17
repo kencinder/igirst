@@ -14,9 +14,6 @@ main_menu() {
                 if [ "$choice" -le "${#platforms[@]}" ]; then
                     selected_platform="${platforms[$((choice - 1))]}"
                     platform_menu "$selected_platform"
-                    if [ $? -eq 5 ]; then
-                        system_menu "${selected_platform,,}"
-                    fi
                 fi
                 ;;
             r) main_command_all "command_report" ;;
@@ -34,27 +31,31 @@ platform_menu() {
     platform="${1}"
     platform_lower="${platform,,}"
     current_platform="$platform"
-systems_ref="${platform_lower}_systems[@]"
-current_systems=("${!systems_ref}")
-vars_ref="${platform_lower}_system_vars[@]"
-current_vars=("${!vars_ref}")
-max_choice="${#current_systems[@]}"
+    systems_ref="${platform_lower}_systems[@]"
+    current_systems=("${!systems_ref}")
+    vars_ref="${platform_lower}_system_vars[@]"
+    current_vars=("${!vars_ref}")
+    max_choice="${#current_systems[@]}"
     while true; do
-		if [ "$menu_target" = "main" ]; then
-            return 10
-        fi
         draw_header "$platform"
         current_systems_arr_name="${platform_lower}_systems"
         generate_menu_list "$current_systems_arr_name" "$command_all_menu_common\n$menu_main_quit"
         read -rsn 1 -p "$choose" choice
         case "${choice,,}" in
-			[0-9]*)
+            [0-9]*)
                 if [ "$choice" -ge 1 ] && [ "$choice" -le "$max_choice" ]; then
                     idx=$((choice - 1))
                     system_prefix="${current_vars[$idx]}"
                     current_system_idx="$idx"
                     previous_menu="platform_menu"
-                    return 5 
+                    system_menu "$platform_lower"
+                    local code=$?
+                    if [ $code -eq 10 ]; then
+                        return 10
+                    fi
+                    if [ $code -eq 5 ]; then
+                        continue
+                    fi
                 fi
                 ;;
             r) system_command_all "$platform_lower" "command_report" ;;
@@ -92,12 +93,8 @@ command_menu() {
                 [ $? -eq 1 ] && continue
                 break 
                 ;;
-            b) if [ "$previous_menu" = "platform_menu" ]; then
-                   "$previous_menu" "$active_platform"
-               else
-                   "$previous_menu"
-               fi ;;
-            t) export menu_target="main" && return 10 ;;
+            b) return 5 ;;
+            t) return 10 ;;
             *) menu_quit_invalid "$choice" ;;
         esac
     done

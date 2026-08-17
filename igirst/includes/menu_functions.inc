@@ -110,10 +110,11 @@ command_menu_set() {
     var_check || return 1 
     create_dat_filename
     while true; do
-		if [ "$menu_target" = "main" ]; then
-        return 10
-    	fi
         command_menu
+		local code=$?
+        if [ $code -eq 5 ] || [ $code -eq 10 ]; then
+            return $code
+        fi
         clear
         7z_handler
         clear
@@ -122,9 +123,6 @@ command_menu_set() {
 }
 
 command_igir() {
-	if [ "$menu_target" = "main" ]; then
-        return 10
-    fi
     local var_dat="${system_prefix}_dat"
     local var_input="${system_prefix}_input"
     local var_options="${system_prefix}_options"

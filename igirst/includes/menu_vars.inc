@@ -16,9 +16,9 @@ backup_continue="
 
 choose="Choose an option:"
 
-command_all_menu_common="R: Generate Report for all Systems\nC: Copy Roms + Generate Report for all Systems\nM: Move Roms + Generate Report for all Systems"
+command_all_menu_common=" \nR: Generate Report for all Systems\nC: Copy Roms + Generate Report for all Systems\nM: Move Roms + Generate Report for all Systems\n "
 
-command_menu_list="R: Generate Report\nC: Copy Roms + Generate Report\nM: Move Roms + Generate Report\nB: Previous Menu"
+command_menu_list="R: Generate Report\nC: Copy Roms + Generate Report\nM: Move Roms + Generate Report\n \nB: Previous Menu"
 
 continue=$'\n\nPress any key to continue...'
 
