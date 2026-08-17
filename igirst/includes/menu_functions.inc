@@ -21,12 +21,16 @@ load_system_vars() {
 
 # Create DAT filename Variable
 create_dat_filename() {
+	dat="${1}"
 	dat_path_strip="${dat##*/}"
 	dat_filename="${dat_path_strip%.*}"
 	dat_filename_nop="${dat_filename//\(*\)}"
 	dat_filename_no_parentheses="${dat_filename_nop% }"
-	source "igirst.cfg"
-	system_vars
+	local var_report="${system_prefix}_report"
+	local report_path="${!var_report}"
+	local updated_path="${report_path//.csv//${dat_filename}.csv}"
+	updated_path="${updated_path//\/\///}"
+	printf -v "$var_report" "%s" "$updated_path"
 }
 
 # Checks if `clean` is set without `--clean-backup` and warns
@@ -107,8 +111,7 @@ command_menu_set() {
     local output_copy="${!var_copy}"
     local output_move="${!var_move}"
     local report="${!var_report}"
-    var_check || return 1 
-    create_dat_filename
+    var_check || return 1
     while true; do
         command_menu
 		local code=$?
@@ -118,6 +121,7 @@ command_menu_set() {
         clear
         7z_handler
         clear
+		create_dat_filename "$dat"
         command_igir
     done
 }
@@ -240,7 +244,7 @@ command_all_common() {
     else
         runtime_output="$input"
     fi
-    create_dat_filename
+    create_dat_filename "$dat"
     command_type "$action_mode"
     clear
     7z_handler
