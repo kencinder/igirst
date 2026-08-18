@@ -6,6 +6,7 @@ fi
 
 shopt -s extglob nullglob
 7z_input_is_output() {
+	local i
     local d_input="${system_prefix}_input"
     local input="${!d_input}"
     ./"$igir_binary" $command --dat "$dat" --input "$input" --output "$runtime_output" $options -X "$exclude" <<< 1 >/dev/null 2>&1
@@ -24,7 +25,7 @@ shopt -s extglob nullglob
     cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
     ./"$igir_binary" $command --dat "$dat" --input "$input" --output "$runtime_output" $options -X "$exclude" <<< 1 >/dev/null 2>&1
     cd "$input" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
-    for i in *.!(7z|zip); do
+    for i in *.!(7z*|zip*); do
         [[ -f "$i" ]] || continue
         "$_7z_command" a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
     done
@@ -33,6 +34,7 @@ shopt -s extglob nullglob
 }
 
 7z_input_not_output() {
+	local i
     local d_input="${system_prefix}_input"
     local input="${!d_input}"
     local target_dest="$runtime_output"
@@ -52,7 +54,7 @@ shopt -s extglob nullglob
     cd "$igirst_dir" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
     command_igir <<< 1 >/dev/null 2>&1
     cd "$target_dest" || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
-    for i in *.!(7z|zip); do
+    for i in *.!(7z*|zip*); do
         [[ -f "$i" ]] || continue
         "$_7z_command" a $_7z_args "${i%.*}.7z" "$i" >/dev/null 2>&1 && rm -- "$i"
     done
