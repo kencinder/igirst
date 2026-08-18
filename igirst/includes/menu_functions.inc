@@ -21,16 +21,13 @@ load_system_vars() {
 
 # Create DAT filename Variable
 create_dat_filename() {
-	dat="${1}"
-	dat_path_strip="${dat##*/}"
-	dat_filename="${dat_path_strip%.*}"
-	dat_filename_nop="${dat_filename//\(*\)}"
-	dat_filename_no_parentheses="${dat_filename_nop% }"
+    dat="${1}"
+    dat_path_strip="${dat##*/}"
+    dat_filename="${dat_path_strip%.*}"
+    dat_filename_nop="${dat_filename//\(*\)}"
+    dat_filename_no_parentheses="${dat_filename_nop% }"
 	local var_report="${system_prefix}_report"
-	local report_path="${!var_report}"
-	local updated_path="${report_path//.csv//${dat_filename}.csv}"
-	updated_path="${updated_path//\/\///}"
-	printf -v "$var_report" "%s" "$updated_path"
+    eval "$var_report=\"${!var_report}\""
 }
 
 # Checks if `clean` is set without `--clean-backup` and warns
@@ -107,6 +104,7 @@ command_menu_set() {
     local var_move="${system_prefix}_output_move"
     local var_report="${system_prefix}_report"
     local dat="${!var_dat}"
+	create_dat_filename "$dat"
     local input="${!var_input}"
     local output_copy="${!var_copy}"
     local output_move="${!var_move}"
