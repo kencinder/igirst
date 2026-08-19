@@ -5,7 +5,7 @@ if [ -z "$_7z_args" ]; then
 fi
 
 shopt -s extglob nullglob
-7z_input_is_output() {
+7z_in_eq_out() {
 	local i
     local d_input="${system_prefix}_input"
     local input="${!d_input}"
@@ -33,7 +33,7 @@ shopt -s extglob nullglob
     cd "$igirst_dir" >/dev/null 2>&1 || { shopt -u extglob nullglob >/dev/null 2>&1; return 1; }
 }
 
-7z_input_not_output() {
+7z_in_neq_out() {
 	local i
     local d_input="${system_prefix}_input"
     local input="${!d_input}"
@@ -87,17 +87,17 @@ shopt -s extglob nullglob
                 backup_path="${BASH_REMATCH[1]}"
             fi
             if [[ "$literal_input" == "$runtime_output" ]]; then
-                7z_input_is_output
+                7z_in_eq_out
                 return 0
             else
-                7z_input_not_output
+                7z_in_neq_out
                 return 0
             fi
         else
             if [[ "$literal_input" == "$runtime_output" ]]; then
                 return 0
             else
-                7z_input_not_output
+                7z_in_neq_out
                 return 0
             fi
         fi

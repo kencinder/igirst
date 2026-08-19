@@ -189,18 +189,18 @@ menu_quit_invalid() {
 var_check() {
     local missing=0
     local vars=(
-        "dat:DAT"
-        "input:INPUT"
-        "output_copy:OUTPUT COPY"
-        "output_move:OUTPUT MOVE"
-        "report:REPORT"
+        "dat:${system_prefix}_dat"
+        "input:${system_prefix}_input"
+        "output_copy:${system_prefix}_output_copy"
+        "output_move:${system_prefix}_output_move"
+        "report:${system_prefix}_report"
     )
     local item
     for item in "${vars[@]}"; do
         local base_var_name="${item%%:*}"
         local display_name="${item#*:}"
         if [ -z "${!base_var_name}" ]; then
-            printf '%s\n\n' "$display_name $var_missing"
+            printf '\n%s\n' "$display_name $var_missing"
             missing=1
         fi
     done

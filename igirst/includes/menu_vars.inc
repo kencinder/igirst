@@ -27,7 +27,7 @@ Q: Quit"
 
 no_igir="$(printf "%52s" "*** IGIR not found! ***")\n\n *** IGIR required in $PWD or set \"igir_binary\" in igirst.cfg ***"
 
-var_missing="location not set in igirst.cfg"
+var_missing="not set in igirst.cfg"
 
 cmd_vars=(command_add dat input output_copy output_move options exclude report)
 
