@@ -147,7 +147,7 @@ command_igir() {
 }
 
 draw_header() {
-    title="${1}"
+    title="${1//_[0-9]/}"
     line="****************************************************"
     width=${#line}
     inner_width=$((width - 4))
