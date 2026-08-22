@@ -13,7 +13,7 @@ Individual Systems, Manufacturer/Platform, or ALL Platforms and Systems can be r
 
 All of IGIR's commands and options can be set in [the config](https://github.com/kencinder/igirst/wiki/Config#config-igirstcfg) per system
 
-<img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/c773e072-37c3-4900-a86a-8c0e849c91d6" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/30a30b2a-8fe9-40de-a1e8-d954771ee9fb" /><img width="260" height="180" alt="image" src="https://github.com/user-attachments/assets/548afffa-f049-465c-b19c-6fa5900b854c" />
+<img width="240" height="200" alt="image" src="https://github.com/user-attachments/assets/4914d57a-aa31-4803-b191-62446c1c6436" /><img width="240" height="200" alt="image" src="https://github.com/user-attachments/assets/2ed60c8a-f556-46e4-8460-7053c11d528c" /><img width="240" height="200" alt="image" src="https://github.com/user-attachments/assets/a70896d5-4191-48ae-8346-ac270d9df924" />
 
 <sub>Windows users can run the script with WSL and the IGIR Linux binary</sub>\
 <sub>MacOS users can change `#!/bin/bash` to `#!/usr/bin/env bash` in the script and included files</sub>
